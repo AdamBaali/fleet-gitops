@@ -21,6 +21,7 @@ controls:
   scripts:
     - path: ../lib/macos/scripts/remove-zoom-artifacts.script.sh
     - path: ../lib/macos/scripts/set-timezone.script.sh
+    - path: ../lib/windows/scripts/windows-set-fleet-uninstall-hidden.ps1
 team_settings:
   secrets:
     - secret: "$FLEET_WORKSTATIONS_ENROLL_SECRET"
