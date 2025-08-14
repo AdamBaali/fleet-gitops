@@ -50,3 +50,36 @@
             name='idleTime' AND 
             CAST(value AS INT) > 1200
         );
+- name: macOS - Jamf binary present
+  platform: darwin
+  description: Checks that the Jamf CLI is installed.
+  resolution: Deploy or reinstall the Jamf framework so the jamf binary exists.
+  query: |
+    SELECT 1
+    FROM file
+    WHERE path IN ('/usr/local/bin/jamf', '/usr/local/jamf/bin/jamf')
+      AND size > 0
+    LIMIT 1;
+- name: macOS - Jamf services loaded
+  platform: darwin
+  description: Checks that Jamf launchd services are loaded.
+  resolution: Repair Jamf management services by running a reconnect script or reinstalling the framework.
+  query: |
+    SELECT 1
+    FROM launchd
+    WHERE label IN (
+      'com.jamf.management.agent',
+      'com.jamf.management.daemon',
+      'com.jamfsoftware.task.1',
+      'com.jamfsoftware.jamf.daemon'
+    )
+    LIMIT 1;
+- name: macOS - Jamf log updated in last 24 hours
+  platform: darwin
+  description: Checks whether /var/log/jamf.log was modified in the last 24 hours, indicating recent Jamf activity.
+  resolution: Run a reconnect script or investigate network reachability to Jamf if the log is stale.
+  query: |
+    SELECT 1
+    FROM file
+    WHERE path = '/var/log/jamf.log'
+      AND mtime > strftime('%s','now') - 86400;
