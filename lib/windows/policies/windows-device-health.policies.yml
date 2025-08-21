@@ -1,7 +1,7 @@
 - name: Windows - Enable BitLocker
   platform: windows
-  description: "This policy checks if BitLocker (disk encryption) is enabled on the C: volume."
-  resolution: As an IT admin, turn on disk encryption in Fleet.
+  description: This policy checks if BitLocker (disk encryption) is enabled on the C: volume.
+  resolution: "As an IT admin, turn on disk encryption in Fleet."
   query: SELECT * FROM bitlocker_info WHERE drive_letter='C:' AND protection_status = 1;
 - name: Windows - Disable guest account
   platform: windows
@@ -18,8 +18,3 @@
   description: This policy checks if maximum amount of time (in minutes) the device is allowed to sit idle before the screen is locked. End users can select any value less than the specified maximum.
   resolution: "As an IT admin, to deploy a Windows profile with the MaxInactivityTimeDeviceLock option documented here: https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-devicelock#maxinactivitytimedevicelock"
   query: SELECT 1 FROM mdm_bridge where mdm_command_input = "<SyncBody><Get><CmdID>1</CmdID><Item><Target><LocURI>./Device/Vendor/MSFT/Policy/Result/DeviceLock/MaxInactivityTimeDeviceLock</LocURI></Target></Item></Get></SyncBody>" and CAST(mdm_command_output AS INT) <= 20;
-- name: Windows - Hide uninstall option for Fleet osquery
-  platform: windows
-  description: This policy checks if the uninstall option is hidden for Fleet osquery by ensuring the NoRemove registry value is set.
-  resolution: "As an IT admin, set the NoRemove registry value to 1 under the Fleet osquery uninstall key to prevent users from uninstalling the agent."
-  query: SELECT data FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{E82BEE6C-2057-4DD1-98ED-0C26056A8A6C}\\NoRemove' AND data = '1';
