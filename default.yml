@@ -10,6 +10,7 @@ queries:
 agent_options:
   path: ./lib/agent-options.yml
 controls: # This cannot be set here and in no-team.yml
+  windows_enabled_and_configured: true
 org_settings:
   server_settings:
     server_url: $FLEET_URL
