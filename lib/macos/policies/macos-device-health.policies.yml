@@ -3,7 +3,7 @@
   description: This policy checks if FileVault (disk encryption) is enabled.
   resolution: As an IT admin, turn on disk encryption in Fleet.
   query: SELECT 1 FROM filevault_status WHERE status = 'FileVault is On.';
-- name: macOS - Disable guest account
+- name: macOS - Disable guest account - Savvas
   platform: darwin
   description: This policy checks if the guest account is disabled.
   resolution: An an IT admin, deploy a macOS, login window profile with the DisableGuestAccount option set to true.
