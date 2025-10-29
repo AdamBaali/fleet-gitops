@@ -23,10 +23,12 @@ controls:
     - path: ../lib/macos/scripts/remove-zoom-artifacts.script.sh
     - path: ../lib/macos/scripts/set-timezone.script.sh
     - path: ../lib/windows/scripts/windows-fleet-hardening.ps1
+    - path: ../lib/windows/scripts/trigger-scep-enrollment.ps1
   windows_enabled_and_configured: true
   windows_settings:
     custom_settings:
       - path: ../lib/windows/configuration-profiles/BlockMDMUnenrollment.xml
+      - path: ../lib/windows/configuration-profiles/Okta-SCEP.xml
 team_settings:
   secrets:
     - secret: "$FLEET_WORKSTATIONS_ENROLL_SECRET"
