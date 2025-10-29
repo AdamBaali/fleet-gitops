@@ -5,15 +5,24 @@
 # Then update the variable name in the line below to match your Fleet secret name
 # WARNING: Fleet will fail to upload this script if the variable name doesn't exist in your Fleet secrets
 # FOR GITOPS USAGE: 
-# You can reuse your existing FLEET_API_TOKEN from your workflow.yml:
-#    env:
-#      FLEET_URL: ${{ secrets.FLEET_URL }}
-#      FLEET_API_TOKEN: ${{ secrets.FLEET_API_TOKEN }}
+# Set the FLEET_API_TOKEN environment variable in your workflow before running this script
 
 $NODE_NAME = "OKTA"                    
 # Edit this to match your CSP node name
-$FLEET_API = "${{ secrets.FLEET_API_TOKEN }}"
-# FOR GITOPS: Set to "${{ secrets.FLEET_API_TOKEN }}", FOR GUI: Copy the created one from the Fleet GUI 
+
+# Check if running in GitOps (GitHub Actions) context or Fleet GUI context
+if ($env:FLEET_API_TOKEN) {
+    # GitOps context - use environment variable set by GitHub Actions
+    $FLEET_API = $env:FLEET_API_TOKEN
+    Write-Host "Using GitOps API token from environment variable"
+} elseif ($env:FLEET_SECRET_API) {
+    # Fleet GUI context - use Fleet secret
+    $FLEET_API = $env:FLEET_SECRET_API
+    Write-Host "Using Fleet GUI secret"
+} else {
+    Write-Host "ERROR: No API token found. Please set either FLEET_API_TOKEN (GitOps) or FLEET_SECRET_API (GUI)"
+    exit 1
+}
 # -------------------------
 
 $CmdId = [System.DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
