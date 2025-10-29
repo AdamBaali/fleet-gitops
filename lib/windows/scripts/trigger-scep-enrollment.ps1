@@ -14,8 +14,8 @@
 
 $NODE_NAME = "OKTA"                    
 # Edit this to match your CSP node name
-$FLEET_API = "FLEET_API_TOKEN"
-# FOR GITOPS: Change to FLEET_API_TOKEN, FOR GUI: Change to your FLEET_SECRET_XXX
+$FLEET_API = "${{ secrets.FLEET_API_TOKEN }}"
+# FOR GITOPS: Change to "${{ secrets.FLEET_API_TOKEN }}", FOR GUI: Change to your "$FLEET_SECRET_XXX"
 # -------------------------
 
 $CmdId = [System.DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
