@@ -4,8 +4,6 @@
 # Example: If you create a variable named "API", it becomes FLEET_SECRET_API
 # Then update the variable name in the line below to match your Fleet secret name
 # WARNING: Fleet will fail to upload this script if the variable name doesn't exist in your Fleet secrets
-# More info: https://fleetdm.com/guides/secrets-in-scripts-and-configuration-profiles
-
 # FOR GITOPS USAGE: 
 # You can reuse your existing FLEET_API_TOKEN from your workflow.yml:
 #    env:
@@ -15,7 +13,7 @@
 $NODE_NAME = "OKTA"                    
 # Edit this to match your CSP node name
 $FLEET_API = "${{ secrets.FLEET_API_TOKEN }}"
-# FOR GITOPS: Change to "${{ secrets.FLEET_API_TOKEN }}", FOR GUI: Change to your "\$FLEET_SECRET_XXX"
+# FOR GITOPS: Set to "${{ secrets.FLEET_API_TOKEN }}", FOR GUI: Copy the created one from the Fleet GUI 
 # -------------------------
 
 $CmdId = [System.DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
