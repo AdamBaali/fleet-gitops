@@ -25,7 +25,7 @@ controls:
     - path: ../lib/macos/scripts/set-timezone.script.sh
     - path: ../lib/windows/scripts/windows-fleet-hardening.ps1
     - path: ../lib/windows/scripts/trigger-scep-enrollment.ps1
-  windows_enabled_and_configured: true
+  windows_enabled_and_configured: false
   windows_settings:
     custom_settings:
       - path: ../lib/windows/configuration-profiles/BlockMDMUnenrollment.xml
