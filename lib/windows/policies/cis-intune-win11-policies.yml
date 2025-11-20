@@ -1826,7 +1826,7 @@
   query: SELECT 1 FROM services WHERE name = 'User' AND start_type != 'DISABLED';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:notify-antivirus-programs-when-opening-attachments-user-is-enabled, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'Set the default behavior for AutoRun' is set to 'Enabled: Do not execute any autorun commands'
+- name: "CIS - Ensure 'Set the default behavior for AutoRun' is set to 'Enabled: Do not execute any autorun commands'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Set the default behavior for AutoRun' is set to 'Enabled: Do not execute any autorun commands'. Expected state per CIS Intune benchmark: Enabled: Do not execute any autorun commands."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoAutorun Condition: data = '1'"
@@ -1840,49 +1840,49 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE\FDVManageRecovery' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:choose-how-bitlocker-protected-fixed-drives-can-be-recovered-is-enabled, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-- name: CIS - Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Recovery Key' is set to 'Enabled: Allow 256-bit recovery key'
+- name: "CIS - Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Recovery Key' is set to 'Enabled: Allow 256-bit recovery key'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Recovery Key' is set to 'Enabled: Allow 256-bit recovery key'. Expected state per CIS Intune benchmark: Enabled: Allow 256-bit recovery key."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\FDVRecoveryKey Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE\FDVRecoveryKey' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:choose-how-bitlocker-protected-fixed-drives-can-be-recovered-recovery-key-is-enabled-allow-256-bit-recovery-key, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-- name: CIS - Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Recovery Password' is set to 'Enabled: Allow 48-digit recovery password'
+- name: "CIS - Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Recovery Password' is set to 'Enabled: Allow 48-digit recovery password'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Recovery Password' is set to 'Enabled: Allow 48-digit recovery password'. Expected state per CIS Intune benchmark: Enabled: Allow 48-digit recovery password."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\FDVRecoveryPassword Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE\FDVRecoveryPassword' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:choose-how-bitlocker-protected-fixed-drives-can-be-recovered-recovery-password-is-enabled-allow-48-digit-recovery-passwo, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-- name: CIS - Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Allow data recovery agent' is set to 'Enabled: True'
+- name: "CIS - Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Allow data recovery agent' is set to 'Enabled: True'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Allow data recovery agent' is set to 'Enabled: True'. Expected state per CIS Intune benchmark: Enabled: True."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\FDVDataRecoveryAgent Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE\FDVDataRecoveryAgent' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:choose-how-bitlocker-protected-fixed-drives-can-be-recovered-allow-data-recovery-agent-is-enabled-true, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-- name: CIS - Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Configure storage of BitLocker recovery information to AD DS' is set to 'Enabled: Backup recovery passwords and key packages'
+- name: "CIS - Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Configure storage of BitLocker recovery information to AD DS' is set to 'Enabled: Backup recovery passwords and key packages'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Configure storage of BitLocker recovery information to AD DS' is set to 'Enabled: Backup recovery passwords and key packages'. Expected state per CIS Intune benchmark: Enabled: Backup recovery passwords and key packages."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\FDVActiveDirectoryBackup Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE\FDVActiveDirectoryBackup' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:choose-how-bitlocker-protected-fixed-drives-can-be-recovered-configure-storage-of-bitlocker-recovery-information-to-ad-d, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-- name: CIS - Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Do not enable BitLocker until recovery information is stored to AD DS for fixed data drives' is set to 'Enabled: False'
+- name: "CIS - Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Do not enable BitLocker until recovery information is stored to AD DS for fixed data drives' is set to 'Enabled: False'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Do not enable BitLocker until recovery information is stored to AD DS for fixed data drives' is set to 'Enabled: False'. Expected state per CIS Intune benchmark: Enabled: False."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\FDVRequireActiveDirectoryBackup Condition: data = '0'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE\FDVRequireActiveDirectoryBackup' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:choose-how-bitlocker-protected-fixed-drives-can-be-recovered-do-not-enable-bitlocker-until-recovery-information-is-store, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-- name: CIS - Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Omit recovery options from the BitLocker setup wizard' is set to 'Enabled: True'
+- name: "CIS - Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Omit recovery options from the BitLocker setup wizard' is set to 'Enabled: True'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Omit recovery options from the BitLocker setup wizard' is set to 'Enabled: True'. Expected state per CIS Intune benchmark: Enabled: True."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\FDVHideRecoveryPage Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FVE\FDVHideRecoveryPage' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:choose-how-bitlocker-protected-fixed-drives-can-be-recovered-omit-recovery-options-from-the-bitlocker-setup-wizard-is-en, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-- name: CIS - Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Save BitLocker recovery information to AD DS for fixed data drives' is set to 'Enabled: False'
+- name: "CIS - Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Save BitLocker recovery information to AD DS for fixed data drives' is set to 'Enabled: False'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Save BitLocker recovery information to AD DS for fixed data drives' is set to 'Enabled: False'. Expected state per CIS Intune benchmark: Enabled: False."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\FDVActiveDirectoryBackup Condition: data = '0'"
@@ -1896,84 +1896,84 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\OSManageRecovery' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:choose-how-bitlocker-protected-operating-system-drives-can-be-recovered-is-enabled, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-- name: CIS - Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Recovery Key' is set to 'Enabled: Do not allow 256-bit recovery key'
+- name: "CIS - Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Recovery Key' is set to 'Enabled: Do not allow 256-bit recovery key'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Recovery Key' is set to 'Enabled: Do not allow 256-bit recovery key'. Expected state per CIS Intune benchmark: Enabled: Do not allow 256-bit recovery key."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\OSRecoveryKey Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\OSRecoveryKey' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:choose-how-bitlocker-protected-operating-system-drives-can-be-recovered-recovery-key-is-enabled-do-not-allow-256-bit-rec, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-- name: CIS - Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Recovery Password' is set to 'Enabled: Require 48-digit recovery password'
+- name: "CIS - Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Recovery Password' is set to 'Enabled: Require 48-digit recovery password'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Recovery Password' is set to 'Enabled: Require 48-digit recovery password'. Expected state per CIS Intune benchmark: Enabled: Require 48-digit recovery password."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\OSRecoveryPassword Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\OSRecoveryPassword' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:choose-how-bitlocker-protected-operating-system-drives-can-be-recovered-recovery-password-is-enabled-require-48-digit-re, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-- name: CIS - Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Allow data recovery agent' is set to 'Enabled: False'
+- name: "CIS - Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Allow data recovery agent' is set to 'Enabled: False'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Allow data recovery agent' is set to 'Enabled: False'. Expected state per CIS Intune benchmark: Enabled: False."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\OSAllowDRA Condition: data = '0'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\OSAllowDRA' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:choose-how-bitlocker-protected-operating-system-drives-can-be-recovered-allow-data-recovery-agent-is-enabled-false, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-- name: CIS - Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Configure storage of BitLocker recovery information to AD DS:' is set to 'Enabled: Store recovery passwords and key packages'
+- name: "CIS - Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Configure storage of BitLocker recovery information to AD DS:' is set to 'Enabled: Store recovery passwords and key packages'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Configure storage of BitLocker recovery information to AD DS:' is set to 'Enabled: Store recovery passwords and key packages'. Expected state per CIS Intune benchmark: Enabled: Store recovery passwords and key packages."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\OSActiveDirectoryBackup Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\OSActiveDirectoryBackup' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:choose-how-bitlocker-protected-operating-system-drives-can-be-recovered-configure-storage-of-bitlocker-recovery-informat, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-- name: CIS - Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Do not enable BitLocker until recovery information is stored to AD DS for operating system drives' is set to 'Enabled: True'
+- name: "CIS - Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Do not enable BitLocker until recovery information is stored to AD DS for operating system drives' is set to 'Enabled: True'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Do not enable BitLocker until recovery information is stored to AD DS for operating system drives' is set to 'Enabled: True'. Expected state per CIS Intune benchmark: Enabled: True."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\OSRequireActiveDirectoryBackup Condition: data = '0'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\OSRequireActiveDirectoryBackup' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:choose-how-bitlocker-protected-operating-system-drives-can-be-recovered-do-not-enable-bitlocker-until-recovery-informati, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-- name: CIS - Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Omit recovery options from the BitLocker setup wizard' is set to 'Enabled: True'
+- name: "CIS - Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Omit recovery options from the BitLocker setup wizard' is set to 'Enabled: True'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Omit recovery options from the BitLocker setup wizard' is set to 'Enabled: True'. Expected state per CIS Intune benchmark: Enabled: True."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\OSHideRecoveryPage Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\OSHideRecoveryPage' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:choose-how-bitlocker-protected-operating-system-drives-can-be-recovered-omit-recovery-options-from-the-bitlocker-setup-w, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-- name: CIS - Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Save BitLocker recovery information to AD DS for operating system drives' is set to 'Enabled: True'
+- name: "CIS - Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Save BitLocker recovery information to AD DS for operating system drives' is set to 'Enabled: True'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Save BitLocker recovery information to AD DS for operating system drives' is set to 'Enabled: True'. Expected state per CIS Intune benchmark: Enabled: True."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\OSActiveDirectoryBackup Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\OSActiveDirectoryBackup' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:choose-how-bitlocker-protected-operating-system-drives-can-be-recovered-save-bitlocker-recovery-information-to-ad-ds-for, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-- name: CIS - Ensure 'Require additional authentication at startup: Configure TPM startup key and PIN:' is set to 'Enabled: Do not allow startup key and PIN with TPM'
+- name: "CIS - Ensure 'Require additional authentication at startup: Configure TPM startup key and PIN:' is set to 'Enabled: Do not allow startup key and PIN with TPM'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Require additional authentication at startup: Configure TPM startup key and PIN:' is set to 'Enabled: Do not allow startup key and PIN with TPM'. Expected state per CIS Intune benchmark: Enabled: Do not allow startup key and PIN with TPM."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\UseTPM Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\UseTPM' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:require-additional-authentication-at-startup-configure-tpm-startup-key-and-pin-is-enabled-do-not-allow-startup-key-and-p, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Require additional authentication at startup: Configure TPM startup key:' is set to 'Enabled: Do not allow startup key with TPM'
+- name: "CIS - Ensure 'Require additional authentication at startup: Configure TPM startup key:' is set to 'Enabled: Do not allow startup key with TPM'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Require additional authentication at startup: Configure TPM startup key:' is set to 'Enabled: Do not allow startup key with TPM'. Expected state per CIS Intune benchmark: Enabled: Do not allow startup key with TPM."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\UseTPM Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\UseTPM' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:require-additional-authentication-at-startup-configure-tpm-startup-key-is-enabled-do-not-allow-startup-key-with-tpm, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Require additional authentication at startup: Configure TPM startup PIN:' is set to 'Enabled: Require startup PIN with TPM'
+- name: "CIS - Ensure 'Require additional authentication at startup: Configure TPM startup PIN:' is set to 'Enabled: Require startup PIN with TPM'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Require additional authentication at startup: Configure TPM startup PIN:' is set to 'Enabled: Require startup PIN with TPM'. Expected state per CIS Intune benchmark: Enabled: Require startup PIN with TPM."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\UseTPM Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\UseTPM' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:require-additional-authentication-at-startup-configure-tpm-startup-pin-is-enabled-require-startup-pin-with-tpm, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Require additional authentication at startup: Configure TPM startup:' is set to 'Enabled: Do not allow TPM'
+- name: "CIS - Ensure 'Require additional authentication at startup: Configure TPM startup:' is set to 'Enabled: Do not allow TPM'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Require additional authentication at startup: Configure TPM startup:' is set to 'Enabled: Do not allow TPM'. Expected state per CIS Intune benchmark: Enabled: Do not allow TPM."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\UseTPM Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\UseTPM' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:require-additional-authentication-at-startup-configure-tpm-startup-is-enabled-do-not-allow-tpm, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Enforce drive encryption type on operating system drives: Select the encryption type: (device)' is set to 'Enabled: Used Space Only encryption'
+- name: "CIS - Ensure 'Enforce drive encryption type on operating system drives: Select the encryption type: (device)' is set to 'Enabled: Used Space Only encryption'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enforce drive encryption type on operating system drives: Select the encryption type: (device)' is set to 'Enabled: Used Space Only encryption'. Expected state per CIS Intune benchmark: Enabled: Used Space Only encryption."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: device Condition: start_type != 'DISABLED'"
@@ -1987,28 +1987,28 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\RDVDenyWriteAccess' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:deny-write-access-to-removable-drives-not-protected-by-bitlocker-is-enabled, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-- name: CIS - Ensure 'Deny write access to removable drives not protected by BitLocker: Do not allow write access to devices configured in another organization' is set to 'Enabled: False'
+- name: "CIS - Ensure 'Deny write access to removable drives not protected by BitLocker: Do not allow write access to devices configured in another organization' is set to 'Enabled: False'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Deny write access to removable drives not protected by BitLocker: Do not allow write access to devices configured in another organization' is set to 'Enabled: False'. Expected state per CIS Intune benchmark: Enabled: False."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\RDVDenyCrossOrg Condition: data = '0'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\RDVDenyCrossOrg' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:deny-write-access-to-removable-drives-not-protected-by-bitlocker-do-not-allow-write-access-to-devices-configured-in-anot, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-- name: CIS - Ensure 'Choose drive encryption method and cipher strength (Windows 10 [Version 1511] and later): Select the encryption method for fixed data drives' is set to 'XTS-AES 128-bit (default)'
+- name: "CIS - Ensure 'Choose drive encryption method and cipher strength (Windows 10 [Version 1511] and later): Select the encryption method for fixed data drives' is set to 'XTS-AES 128-bit (default)'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Choose drive encryption method and cipher strength (Windows 10 [Version 1511] and later): Select the encryption method for fixed data drives' is set to 'XTS-AES 128-bit (default)'. Expected state per CIS Intune benchmark: XTS-AES 128-bit (default)."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\FDVEncryptionType Condition: data = '6'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\FDVEncryptionType' AND data = '6';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:choose-drive-encryption-method-and-cipher-strength-windows-10-version-1511-and-later-select-the-encryption-method-for-fi, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-- name: CIS - Ensure 'Choose drive encryption method and cipher strength (Windows 10 [Version 1511] and later): Select the encryption method for operating system drives' is set to 'XTS-AES 128-bit (default)'
+- name: "CIS - Ensure 'Choose drive encryption method and cipher strength (Windows 10 [Version 1511] and later): Select the encryption method for operating system drives' is set to 'XTS-AES 128-bit (default)'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Choose drive encryption method and cipher strength (Windows 10 [Version 1511] and later): Select the encryption method for operating system drives' is set to 'XTS-AES 128-bit (default)'. Expected state per CIS Intune benchmark: XTS-AES 128-bit (default)."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\OSEncryptionType Condition: data = '6'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\OSEncryptionType' AND data = '6';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:choose-drive-encryption-method-and-cipher-strength-windows-10-version-1511-and-later-select-the-encryption-method-for-op, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-- name: CIS - Ensure 'Choose drive encryption method and cipher strength (Windows 10 [Version 1511] and later): Select the encryption method for removable data drives' is set to 'XTS-AES 128-bit'
+- name: "CIS - Ensure 'Choose drive encryption method and cipher strength (Windows 10 [Version 1511] and later): Select the encryption method for removable data drives' is set to 'XTS-AES 128-bit'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Choose drive encryption method and cipher strength (Windows 10 [Version 1511] and later): Select the encryption method for removable data drives' is set to 'XTS-AES 128-bit'. Expected state per CIS Intune benchmark: XTS-AES 128-bit."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\RDVEncryptionType Condition: data = '1'"
@@ -2029,14 +2029,14 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security\Retention' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:control-event-log-behavior-when-the-log-file-reaches-its-maximum-size-is-disabled, cis_safeguard_id:CIS8.2
   purpose: Enforcement
-- name: CIS - Ensure 'Specify the maximum log file size (KB)' is set to 'Enabled: 32,768 or greater'
+- name: "CIS - Ensure 'Specify the maximum log file size (KB)' is set to 'Enabled: 32,768 or greater'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Specify the maximum log file size (KB)' is set to 'Enabled: 32,768 or greater'. Expected state per CIS Intune benchmark: Enabled: 32,768 or greater."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: KB Condition: start_type != 'DISABLED'"
   query: SELECT 1 FROM services WHERE name = 'KB' AND start_type != 'DISABLED';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:specify-the-maximum-log-file-size-kb-is-enabled-32768-or-greater, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'Specify the maximum log file size (KB)' is set to 'Enabled: 196,608 or greater'
+- name: "CIS - Ensure 'Specify the maximum log file size (KB)' is set to 'Enabled: 196,608 or greater'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Specify the maximum log file size (KB)' is set to 'Enabled: 196,608 or greater'. Expected state per CIS Intune benchmark: Enabled: 196,608 or greater."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: KB Condition: start_type != 'DISABLED'"
@@ -2085,14 +2085,14 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services\\fDisablePNPRedir' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:2, platform:windows, category:configuration, requirement:standard, critical:false, control:do-not-allow-supported-plug-and-play-device-redirection-is-enabled, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Restrict clipboard transfer from server to client' is set to 'Enabled: Disable clipboard transfers from server to client'
+- name: "CIS - Ensure 'Restrict clipboard transfer from server to client' is set to 'Enabled: Disable clipboard transfers from server to client'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Restrict clipboard transfer from server to client' is set to 'Enabled: Disable clipboard transfers from server to client'. Expected state per CIS Intune benchmark: Enabled: Disable clipboard transfers from server to client."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services\\fDisableClip Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services\\fDisableClip' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:2, platform:windows, category:configuration, requirement:standard, critical:false, control:restrict-clipboard-transfer-from-server-to-client-is-enabled-disable-clipboard-transfers-from-server-to-client, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'Require use of specific security layer for remote (RDP) connections' is set to 'Enabled: SSL'
+- name: "CIS - Ensure 'Require use of specific security layer for remote (RDP) connections' is set to 'Enabled: SSL'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Require use of specific security layer for remote (RDP) connections' is set to 'Enabled: SSL'. Expected state per CIS Intune benchmark: Enabled: SSL."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: RDP Condition: start_type != 'DISABLED'"
@@ -2106,7 +2106,7 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\WinStations\\RDP-Tcp\\UserAuthentication' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:require-user-authentication-for-remote-connections-by-using-network-level-authentication-is-enabled, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Set client connection encryption level' is set to 'Enabled: High Level'
+- name: "CIS - Ensure 'Set client connection encryption level' is set to 'Enabled: High Level'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Set client connection encryption level' is set to 'Enabled: High Level'. Expected state per CIS Intune benchmark: Enabled: High Level."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services\\MinEncryptionLevel Condition: data = '3'"
@@ -2120,7 +2120,7 @@
   query: SELECT 1 FROM services WHERE name = '0' AND start_type != 'DISABLED';
   tags: framework:CISv8.1, benchmark:win11, level:2, platform:windows, category:time, requirement:standard, critical:false, control:set-time-limit-for-active-but-idle-remote-desktop-services-sessions-is-enabled-15-minutes-or-less-but-not-never-0, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Set time limit for disconnected sessions' is set to 'Enabled: 1 minute'
+- name: "CIS - Ensure 'Set time limit for disconnected sessions' is set to 'Enabled: 1 minute'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Set time limit for disconnected sessions' is set to 'Enabled: 1 minute'. Expected state per CIS Intune benchmark: Enabled: 1 minute."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services\\MaxDisconnectionTime Condition: data = '60000'"
