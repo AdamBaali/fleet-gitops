@@ -2337,238 +2337,238 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection\\DoNotShowFeedbackNotifications' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:accounts, requirement:standard, critical:false, control:do-not-show-feedback-notifications-is-feedback-notifications-are-disabled, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'Enable Domain Network Firewall: Default Inbound Action for Domain Profile' is set to 'Block'
+- name: "CIS - Ensure 'Enable Domain Network Firewall: Default Inbound Action for Domain Profile' is set to 'Block'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Domain Network Firewall: Default Inbound Action for Domain Profile' is set to 'Block'. Expected state per CIS Intune benchmark: Block."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile\\EnableFirewall Condition: data = '0'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile\\EnableFirewall' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-domain-network-firewall-default-inbound-action-for-domain-profile-is-block, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Enable Domain Network Firewall: Disable Inbound Notifications' is set to 'True'
+- name: "CIS - Ensure 'Enable Domain Network Firewall: Disable Inbound Notifications' is set to 'True'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Domain Network Firewall: Disable Inbound Notifications' is set to 'True'. Expected state per CIS Intune benchmark: True."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile\\EnableFirewall Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile\\EnableFirewall' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-domain-network-firewall-disable-inbound-notifications-is-true, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Enable Domain Network Firewall: Enable Log Dropped Packets' is set to 'Yes: Enable Logging Of Dropped Packets'
+- name: "CIS - Ensure 'Enable Domain Network Firewall: Enable Log Dropped Packets' is set to 'Yes: Enable Logging Of Dropped Packets'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Domain Network Firewall: Enable Log Dropped Packets' is set to 'Yes: Enable Logging Of Dropped Packets'. Expected state per CIS Intune benchmark: Yes: Enable Logging Of Dropped Packets."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile\\EnableFirewall Condition: data = '0'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile\\EnableFirewall' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-domain-network-firewall-enable-log-dropped-packets-is-yes-enable-logging-of-dropped-packets, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Enable Domain Network Firewall: Enable Log Success Connections' is set to 'Enable Logging Of Successful Connections'
+- name: "CIS - Ensure 'Enable Domain Network Firewall: Enable Log Success Connections' is set to 'Enable Logging Of Successful Connections'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Domain Network Firewall: Enable Log Success Connections' is set to 'Enable Logging Of Successful Connections'. Expected state per CIS Intune benchmark: Enable Logging Of Successful Connections."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile\\EnableFirewall Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile\\EnableFirewall' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-domain-network-firewall-enable-log-success-connections-is-enable-logging-of-successful-connections, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Enable Domain Network Firewall: Log File Path' is set to '%SystemRoot%\System32\logfiles\firewall\domainfw.log'
+- name: "CIS - Ensure 'Enable Domain Network Firewall: Log File Path' is set to '%SystemRoot%\System32\logfiles\firewall\domainfw.log'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Domain Network Firewall: Log File Path' is set to '%SystemRoot%\\System32\\logfiles\\firewall\\domainfw.log'. Expected state per CIS Intune benchmark: %SystemRoot%\\System32\\logfiles\\firewall\\domainfw.log."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile\\LogFilePath Condition: data LIKE '%%systemroot%\\system32\\logfiles\\firewall\\domainfw.log%'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\DomainProfile\LogFilePath' AND data LIKE '%%systemroot%\system32\logfiles\firewall\domainfw.log%';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-domain-network-firewall-log-file-path-is-systemroot-system32-logfiles-firewall-domainfw-log, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Enable Domain Network Firewall: Log Max File Size' is set to '16,384 KB or greater'
+- name: "CIS - Ensure 'Enable Domain Network Firewall: Log Max File Size' is set to '16,384 KB or greater'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Domain Network Firewall: Log Max File Size' is set to '16,384 KB or greater'. Expected state per CIS Intune benchmark: 16,384 KB or greater."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile\\LogFileSize Condition: data = '16384'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\DomainProfile\LogFileSize' AND data = '16384';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-domain-network-firewall-log-max-file-size-is-16384-kb-or-greater, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Enable Private Network Firewall: Default Inbound Action for Private Profile' is set to 'Block'
+- name: "CIS - Ensure 'Enable Private Network Firewall: Default Inbound Action for Private Profile' is set to 'Block'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Private Network Firewall: Default Inbound Action for Private Profile' is set to 'Block'. Expected state per CIS Intune benchmark: Block."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile\\EnableFirewall Condition: data = '0'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile\\EnableFirewall' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-private-network-firewall-default-inbound-action-for-private-profile-is-block, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-  - name: CIS - Ensure 'Enable Private Network Firewall: Disable Inbound Notifications' is set to 'True'
+  - name: "CIS - Ensure 'Enable Private Network Firewall: Disable Inbound Notifications' is set to 'True'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Private Network Firewall: Disable Inbound Notifications' is set to 'True'. Expected state per CIS Intune benchmark: True."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile\\EnableFirewall Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile\\EnableFirewall' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-private-network-firewall-disable-inbound-notifications-is-true, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Enable Private Network Firewall: Enable Log Success Connections' is set to 'Enable Logging Of Successful Connections'
+- name: "CIS - Ensure 'Enable Private Network Firewall: Enable Log Success Connections' is set to 'Enable Logging Of Successful Connections'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Private Network Firewall: Enable Log Success Connections' is set to 'Enable Logging Of Successful Connections'. Expected state per CIS Intune benchmark: Enable Logging Of Successful Connections."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile\\EnableFirewall Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile\\EnableFirewall' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-private-network-firewall-enable-log-success-connections-is-enable-logging-of-successful-connections, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Enable Private Network Firewall: Enable Log Dropped Packets' is set to 'Yes: Enable Logging Of Dropped Packets'
+- name: "CIS - Ensure 'Enable Private Network Firewall: Enable Log Dropped Packets' is set to 'Yes: Enable Logging Of Dropped Packets'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Private Network Firewall: Enable Log Dropped Packets' is set to 'Yes: Enable Logging Of Dropped Packets'. Expected state per CIS Intune benchmark: Yes: Enable Logging Of Dropped Packets."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile\\EnableFirewall Condition: data = '0'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile\\EnableFirewall' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-private-network-firewall-enable-log-dropped-packets-is-yes-enable-logging-of-dropped-packets, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Enable Private Network Firewall: Log File Path' is set to '%SystemRoot%\System32\logfiles\firewall\privatefw.log'
+- name: "CIS - Ensure 'Enable Private Network Firewall: Log File Path' is set to '%SystemRoot%\System32\logfiles\firewall\privatefw.log'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Private Network Firewall: Log File Path' is set to '%SystemRoot%\\System32\\logfiles\\firewall\\privatefw.log'. Expected state per CIS Intune benchmark: %SystemRoot%\\System32\\logfiles\\firewall\\privatefw.log."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile\\LogFilePath Condition: data LIKE '%%systemroot%\\system32\\logfiles\\firewall\\privatefw.log%'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\StandardProfile\LogFilePath' AND data LIKE '%%systemroot%\system32\logfiles\firewall\privatefw.log%';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-private-network-firewall-log-file-path-is-systemroot-system32-logfiles-firewall-privatefw-log, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Enable Private Network Firewall: Log Max File Size' is set to '16,384 KB or greater'
+- name: "CIS - Ensure 'Enable Private Network Firewall: Log Max File Size' is set to '16,384 KB or greater'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Private Network Firewall: Log Max File Size' is set to '16,384 KB or greater'. Expected state per CIS Intune benchmark: 16,384 KB or greater."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile\\LogFileSize Condition: data = '16384'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\StandardProfile\LogFileSize' AND data = '16384';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-private-network-firewall-log-max-file-size-is-16384-kb-or-greater, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Enable Public Network Firewall: Allow Local Ipsec Policy Merge' is set to 'False'
+- name: "CIS - Ensure 'Enable Public Network Firewall: Allow Local Ipsec Policy Merge' is set to 'False'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Public Network Firewall: Allow Local Ipsec Policy Merge' is set to 'False'. Expected state per CIS Intune benchmark: False."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\PublicProfile\\EnableFirewall Condition: data = '0'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\PublicProfile\\EnableFirewall' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-public-network-firewall-allow-local-ipsec-policy-merge-is-false, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Enable Public Network Firewall: Default Inbound Action for Public Profile' is set to 'Block'
+- name: "CIS - Ensure 'Enable Public Network Firewall: Default Inbound Action for Public Profile' is set to 'Block'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Public Network Firewall: Default Inbound Action for Public Profile' is set to 'Block'. Expected state per CIS Intune benchmark: Block."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\PublicProfile\\EnableFirewall Condition: data = '0'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\PublicProfile\\EnableFirewall' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-public-network-firewall-default-inbound-action-for-public-profile-is-block, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Enable Public Network Firewall: Disable Inbound Notifications' is set to 'True'
+- name: "CIS - Ensure 'Enable Public Network Firewall: Disable Inbound Notifications' is set to 'True'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Public Network Firewall: Disable Inbound Notifications' is set to 'True'. Expected state per CIS Intune benchmark: True."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\PublicProfile\\EnableFirewall Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\PublicProfile\\EnableFirewall' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-public-network-firewall-disable-inbound-notifications-is-true, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Enable Public Network Firewall: Enable Log Dropped Packets' is set to 'Yes: Enable Logging Of Dropped Packets'
+- name: "CIS - Ensure 'Enable Public Network Firewall: Enable Log Dropped Packets' is set to 'Yes: Enable Logging Of Dropped Packets'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Public Network Firewall: Enable Log Dropped Packets' is set to 'Yes: Enable Logging Of Dropped Packets'. Expected state per CIS Intune benchmark: Yes: Enable Logging Of Dropped Packets."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\PublicProfile\\EnableFirewall Condition: data = '0'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\PublicProfile\\EnableFirewall' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-public-network-firewall-enable-log-dropped-packets-is-yes-enable-logging-of-dropped-packets, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Enable Public Network Firewall: Enable Log Success Connections' is set to 'Enable Logging Of Successful Connections'
+- name: "CIS - Ensure 'Enable Public Network Firewall: Enable Log Success Connections' is set to 'Enable Logging Of Successful Connections'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Public Network Firewall: Enable Log Success Connections' is set to 'Enable Logging Of Successful Connections'. Expected state per CIS Intune benchmark: Enable Logging Of Successful Connections."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\PublicProfile\\EnableFirewall Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\PublicProfile\\EnableFirewall' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-public-network-firewall-enable-log-success-connections-is-enable-logging-of-successful-connections, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Enable Public Network Firewall: Log File Path' is set to '%SystemRoot%\System32\logfiles\firewall\publicfw.log'
+- name: "CIS - Ensure 'Enable Public Network Firewall: Log File Path' is set to '%SystemRoot%\System32\logfiles\firewall\publicfw.log'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Public Network Firewall: Log File Path' is set to '%SystemRoot%\\System32\\logfiles\\firewall\\publicfw.log'. Expected state per CIS Intune benchmark: %SystemRoot%\\System32\\logfiles\\firewall\\publicfw.log."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\PublicProfile\\LogFilePath Condition: data LIKE '%%systemroot%\\system32\\logfiles\\firewall\\publicfw.log%'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\PublicProfile\LogFilePath' AND data LIKE '%%systemroot%\system32\logfiles\firewall\publicfw.log%';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-public-network-firewall-log-file-path-is-systemroot-system32-logfiles-firewall-publicfw-log, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Enable Public Network Firewall: Log Max File Size' is set to '16,384 KB or greater'
+- name: "CIS - Ensure 'Enable Public Network Firewall: Log Max File Size' is set to '16,384 KB or greater'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Public Network Firewall: Log Max File Size' is set to '16,384 KB or greater'. Expected state per CIS Intune benchmark: 16,384 KB or greater."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\PublicProfile\\LogFileSize Condition: data = '16384'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\PublicProfile\LogFileSize' AND data = '16384';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-public-network-firewall-log-max-file-size-is-16384-kb-or-greater, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Accounts: Limit local account use of blank passwords to console logon only' is set to 'Enabled'
+- name: "CIS - Ensure 'Accounts: Limit local account use of blank passwords to console logon only' is set to 'Enabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Accounts: Limit local account use of blank passwords to console logon only' is set to 'Enabled'. Expected state per CIS Intune benchmark: Enabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\LimitBlankPasswordUse Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\LimitBlankPasswordUse' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:accounts, requirement:standard, critical:false, control:accounts-limit-local-account-use-of-blank-passwords-to-console-logon-only-is-enabled, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Devices: Prevent users from installing printer drivers when connecting to shared printers' is set to 'Enable'
+- name: "CIS - Ensure 'Devices: Prevent users from installing printer drivers when connecting to shared printers' is set to 'Enable'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Devices: Prevent users from installing printer drivers when connecting to shared printers' is set to 'Enable'. Expected state per CIS Intune benchmark: Enable."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Printers\\DisableUserInstalls Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Printers\\DisableUserInstalls' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:2, platform:windows, category:accounts, requirement:standard, critical:false, control:devices-prevent-users-from-installing-printer-drivers-when-connecting-to-shared-printers-is-enable, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Interactive logon: Machine inactivity limit' is set to '900 or fewer second(s), but not 0'
+- name: "CIS - Ensure 'Interactive logon: Machine inactivity limit' is set to '900 or fewer second(s), but not 0'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Interactive logon: Machine inactivity limit' is set to '900 or fewer second(s), but not 0'. Expected state per CIS Intune benchmark: 900 or fewer second(s), but not 0."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\InactivityTimeoutSecs Condition: data = '900'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\InactivityTimeoutSecs' AND data = '900';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:interactive-logon-machine-inactivity-limit-is-900-or-fewer-seconds-but-not-0, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Microsoft network client: Digitally sign communications (always)' is set to 'Enabled'
+- name: "CIS - Ensure 'Microsoft network client: Digitally sign communications (always)' is set to 'Enabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Microsoft network client: Digitally sign communications (always)' is set to 'Enabled'. Expected state per CIS Intune benchmark: Enabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: always Condition: start_type != 'DISABLED'"
   query: SELECT 1 FROM services WHERE name = 'always' AND start_type != 'DISABLED';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:session, requirement:standard, critical:false, control:microsoft-network-client-digitally-sign-communications-always-is-enabled, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Microsoft network client: Digitally sign communications (if server agrees)' is set to 'Enabled'
+- name: "CIS - Ensure 'Microsoft network client: Digitally sign communications (if server agrees)' is set to 'Enabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Microsoft network client: Digitally sign communications (if server agrees)' is set to 'Enabled'. Expected state per CIS Intune benchmark: Enabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: if server agrees Condition: start_type != 'DISABLED'"
   query: SELECT 1 FROM services WHERE name = 'if server agrees' AND start_type != 'DISABLED';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:microsoft-network-client-digitally-sign-communications-if-server-agrees-is-enabled, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Microsoft network client: Send unencrypted password to third-party SMB servers' is set to 'Disabled'
+- name: "CIS - Ensure 'Microsoft network client: Send unencrypted password to third-party SMB servers' is set to 'Disabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Microsoft network client: Send unencrypted password to third-party SMB servers' is set to 'Disabled'. Expected state per CIS Intune benchmark: Disabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\LanmanWorkstation\\Parameters\\EnablePlainTextPassword Condition: data = '0'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\LanmanWorkstation\\Parameters\\EnablePlainTextPassword' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:microsoft-network-client-send-unencrypted-password-to-third-party-smb-servers-is-disabled, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Microsoft network server: Digitally sign communications (always)' is set to 'Enabled'
+- name: "CIS - Ensure 'Microsoft network server: Digitally sign communications (always)' is set to 'Enabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Microsoft network server: Digitally sign communications (always)' is set to 'Enabled'. Expected state per CIS Intune benchmark: Enabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: always Condition: start_type != 'DISABLED'"
   query: SELECT 1 FROM services WHERE name = 'always' AND start_type != 'DISABLED';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:microsoft-network-server-digitally-sign-communications-always-is-enabled, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Microsoft network server: Digitally sign communications (if client agrees)' is set to 'Enabled'
+- name: "CIS - Ensure 'Microsoft network server: Digitally sign communications (if client agrees)' is set to 'Enabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Microsoft network server: Digitally sign communications (if client agrees)' is set to 'Enabled'. Expected state per CIS Intune benchmark: Enabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: if client agrees Condition: start_type != 'DISABLED'"
   query: SELECT 1 FROM services WHERE name = 'if client agrees' AND start_type != 'DISABLED';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:microsoft-network-server-digitally-sign-communications-if-client-agrees-is-enabled, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Network access: Do not allow anonymous enumeration of SAM accounts' is set to 'Enabled'
+- name: "CIS - Ensure 'Network access: Do not allow anonymous enumeration of SAM accounts' is set to 'Enabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Network access: Do not allow anonymous enumeration of SAM accounts' is set to 'Enabled'. Expected state per CIS Intune benchmark: Enabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\RestrictAnonymous Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\RestrictAnonymous' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:network-access-do-not-allow-anonymous-enumeration-of-sam-accounts-is-enabled, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Network access: Do not allow anonymous enumeration of SAM accounts and shares' is set to 'Enabled'
+- name: "CIS - Ensure 'Network access: Do not allow anonymous enumeration of SAM accounts and shares' is set to 'Enabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Network access: Do not allow anonymous enumeration of SAM accounts and shares' is set to 'Enabled'. Expected state per CIS Intune benchmark: Enabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\RestrictAnonymous Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\RestrictAnonymous' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:network-access-do-not-allow-anonymous-enumeration-of-sam-accounts-and-shares-is-enabled, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Network access: Restrict anonymous access to Named Pipes and Shares' is set to 'Enabled'
+- name: "CIS - Ensure 'Network access: Restrict anonymous access to Named Pipes and Shares' is set to 'Enabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Network access: Restrict anonymous access to Named Pipes and Shares' is set to 'Enabled'. Expected state per CIS Intune benchmark: Enabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\LanmanServer\\Parameters\\RestrictNullSessAccess Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\LanmanServer\\Parameters\\RestrictNullSessAccess' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:network-access-restrict-anonymous-access-to-named-pipes-and-shares-is-enabled, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Network access: Restrict clients allowed to make remote calls to SAM' is set to 'Administrators: Remote Access: Allow'
+- name: "CIS - Ensure 'Network access: Restrict clients allowed to make remote calls to SAM' is set to 'Administrators: Remote Access: Allow'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Network access: Restrict clients allowed to make remote calls to SAM' is set to 'Administrators: Remote Access: Allow'. Expected state per CIS Intune benchmark: Administrators: Remote Access: Allow."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\RestrictRemoteSAM Condition: data LIKE '%Administrators%'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\RestrictRemoteSAM' AND data LIKE '%Administrators%';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:network-access-restrict-clients-allowed-to-make-remote-calls-to-sam-is-administrators-remote-access-allow, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Network security: Allow Local System to use computer identity for NTLM' is set to 'Allow'
+- name: "CIS - Ensure 'Network security: Allow Local System to use computer identity for NTLM' is set to 'Allow'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Network security: Allow Local System to use computer identity for NTLM' is set to 'Allow'. Expected state per CIS Intune benchmark: Allow."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\UseMachineId Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\UseMachineId' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:network-security-allow-local-system-to-use-computer-identity-for-ntlm-is-allow, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Network security: Do not store LAN Manager hash value on next password change' is set to 'Enabled'
+- name: "CIS - Ensure 'Network security: Do not store LAN Manager hash value on next password change' is set to 'Enabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Network security: Do not store LAN Manager hash value on next password change' is set to 'Enabled'. Expected state per CIS Intune benchmark: Enabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\NoLMHash Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\NoLMHash' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:network-security-do-not-store-lan-manager-hash-value-on-next-password-change-is-enabled, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Network security: LAN Manager authentication level' is set to 'Send LM and NTLMv2 responses only. Refuse LM and NTLM'
+- name: "CIS - Ensure 'Network security: LAN Manager authentication level' is set to 'Send LM and NTLMv2 responses only. Refuse LM and NTLM'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Network security: LAN Manager authentication level' is set to 'Send LM and NTLMv2 responses only. Refuse LM and NTLM'. Expected state per CIS Intune benchmark: Send LM and NTLMv2 responses only. Refuse LM and NTLM."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\LmCompatibilityLevel Condition: data = '5'"
@@ -2589,7 +2589,7 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\MSV1_0\\NTLMMinServerSec' AND data = '537395216';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:network, requirement:standard, critical:false, control:network-security-minimum-session-security-for-ntlmssp-based-servers-is-require-ntlm-and-128-bit-encryption, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Network security: Restrict NTLM: Audit Incoming NTLM Traffic' is set to 'Enable auditing for all accounts'
+- name: "CIS - Ensure 'Network security: Restrict NTLM: Audit Incoming NTLM Traffic' is set to 'Enable auditing for all accounts'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Network security: Restrict NTLM: Audit Incoming NTLM Traffic' is set to 'Enable auditing for all accounts'. Expected state per CIS Intune benchmark: Enable auditing for all accounts."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\MSV1_0\\AuditReceivingNTLMTraffic Condition: data = '1'"
@@ -2603,7 +2603,7 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\ConsentPromptBehaviorAdmin' AND data = '2';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:user-account-control-behavior-of-the-elevation-prompt-for-administrators-is-prompt-for-consent-on-the-secure-desktop, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'User Account Control: Behavior of the elevation prompt for standard users' is set to 'Automatically deny elevation requests'
+- name: "CIS - Ensure 'User Account Control: Behavior of the elevation prompt for standard users' is set to 'Automatically deny elevation requests'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'User Account Control: Behavior of the elevation prompt for standard users' is set to 'Automatically deny elevation requests'. Expected state per CIS Intune benchmark: Automatically deny elevation requests."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\ConsentPromptBehaviorUser Condition: data = '0'"
@@ -2617,28 +2617,28 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\EnableInstallerDetection' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:user-account-control-detect-application-installations-and-prompt-for-elevation-is-enabled, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'User Account Control: Only elevate UIAccess applications that are installed in secure locations' is set to 'Enabled'
+- name: "CIS - Ensure 'User Account Control: Only elevate UIAccess applications that are installed in secure locations' is set to 'Enabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'User Account Control: Only elevate UIAccess applications that are installed in secure locations' is set to 'Enabled'. Expected state per CIS Intune benchmark: Enabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\EnableSecureUIAPaths Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\EnableSecureUIAPaths' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:user-account-control-only-elevate-uiaccess-applications-that-are-installed-in-secure-locations-is-enabled, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'User Account Control: Switch to the secure desktop when prompting for elevation' is set to 'Enabled'
+- name: "CIS - Ensure 'User Account Control: Switch to the secure desktop when prompting for elevation' is set to 'Enabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'User Account Control: Switch to the secure desktop when prompting for elevation' is set to 'Enabled'. Expected state per CIS Intune benchmark: Enabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\PromptOnSecureDesktop Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\PromptOnSecureDesktop' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:authn, requirement:standard, critical:false, control:user-account-control-switch-to-the-secure-desktop-when-prompting-for-elevation-is-enabled, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'User Account Control: Run all administrators in Admin Approval Mode' is set to 'Enabled'
+- name: "CIS - Ensure 'User Account Control: Run all administrators in Admin Approval Mode' is set to 'Enabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'User Account Control: Run all administrators in Admin Approval Mode' is set to 'Enabled'. Expected state per CIS Intune benchmark: Enabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\EnableLUA Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\EnableLUA' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:user-account-control-run-all-administrators-in-admin-approval-mode-is-enabled, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'User Account Control: Virtualize file and registry write failures to per-user locations' is set to 'Enabled'
+- name: "CIS - Ensure 'User Account Control: Virtualize file and registry write failures to per-user locations' is set to 'Enabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'User Account Control: Virtualize file and registry write failures to per-user locations' is set to 'Enabled'. Expected state per CIS Intune benchmark: Enabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\EnableVirtualization Condition: data = '1'"
