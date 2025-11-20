@@ -13,7 +13,7 @@ policies:
   - path: ../lib/windows/policies/windows-device-health.policies.yml
   - path: ../lib/windows/policies/windows-fleet-hardening.policies.yml
   - path: ../lib/linux/policies/linux-device-health.policies.yml
-  - path: ../lib/windows/policies/cis-intune-win11-policies.yaml
+  - path: ../lib/windows/policies/cis-intune-win11-policies.yml
 queries:
   - path: ../lib/all/queries/collect-usb-devices.queries.yml
   - path: ../lib/all/queries/collect-failed-login-attempts.queries.yml
