@@ -629,7 +629,7 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Scan\\DisableScriptScanning' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:allow-script-scanning-is-allowed, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'ASR: Block Adobe Reader from creating child processes' is set to 'Block'
+- name: "CIS - Ensure 'ASR: Block Adobe Reader from creating child processes' is set to 'Block'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'ASR: Block Adobe Reader from creating child processes' is set to 'Block'. Expected state per CIS Intune benchmark: Block."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\ASR\\Rules\\7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c Condition: data = '1'"
