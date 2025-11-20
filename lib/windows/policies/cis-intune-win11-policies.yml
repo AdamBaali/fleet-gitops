@@ -944,7 +944,7 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\AdvertisingInfo\\Disabled' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:2, platform:windows, category:configuration, requirement:standard, critical:false, control:disable-advertising-id-is-enabled, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'Let Apps Activate With Voice Above Lock' is set to 'Enabled: Force Deny'
+- name: "CIS - Ensure 'Let Apps Activate With Voice Above Lock' is set to 'Enabled: Force Deny'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Let Apps Activate With Voice Above Lock' is set to 'Enabled: Force Deny'. Expected state per CIS Intune benchmark: Enabled: Force Deny."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search\\AllowCortanaAboveLock Condition: data = '0'"
