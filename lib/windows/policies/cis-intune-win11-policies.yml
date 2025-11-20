@@ -68,7 +68,7 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Printers\\EnablePrintSpoolerPromptingUI' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:printing, requirement:standard, critical:false, control:allow-print-spooler-to-accept-client-connections-is-disabled, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Configure RPC over TCP port: RPC over TCP port:' is set to 'Enabled'
+- name: "CIS - Ensure 'Configure RPC over TCP port: RPC over TCP port:' is set to 'Enabled: 0'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Configure RPC over TCP port: RPC over TCP port:' is set to 'Enabled: 0'. Expected state per CIS Intune benchmark: Enabled: 0."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Rpc\\TcpPort Condition: data = '0'"
