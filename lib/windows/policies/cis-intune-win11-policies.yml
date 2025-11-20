@@ -1616,56 +1616,56 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Network Connections\\NC_ProhibitNonDomainConnections' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:network, requirement:standard, critical:false, control:prohibit-connection-to-non-domain-networks-when-connected-to-domain-authenticated-network-is-enabled, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Configure Redirection Guard: Redirection Guard Options' is set to 'Enabled: Redirection Guard Enabled'
+- name: "CIS - Ensure 'Configure Redirection Guard: Redirection Guard Options' is set to 'Enabled: Redirection Guard Enabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Configure Redirection Guard: Redirection Guard Options' is set to 'Enabled: Redirection Guard Enabled'. Expected state per CIS Intune benchmark: Enabled: Redirection Guard Enabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\\RedirectionGuardEnabled Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\\RedirectionGuardEnabled' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:configure-redirection-guard-redirection-guard-options-is-enabled-redirection-guard-enabled, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Configure RPC connection settings: Protocol to use for outgoing RPC connections' is set to 'Enabled: RPC over TCP'
+- name: "CIS - Ensure 'Configure RPC connection settings: Protocol to use for outgoing RPC connections' is set to 'Enabled: RPC over TCP'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Configure RPC connection settings: Protocol to use for outgoing RPC connections' is set to 'Enabled: RPC over TCP'. Expected state per CIS Intune benchmark: Enabled: RPC over TCP."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Rpc\\ProtocolOrder Condition: data = 'ncacn_ip_tcp'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Rpc\\ProtocolOrder' AND data = 'ncacn_ip_tcp';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:configure-rpc-connection-settings-protocol-to-use-for-outgoing-rpc-connections-is-enabled-rpc-over-tcp, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Configure RPC connection settings: Use authentication for outgoing RPC connections' is set to 'Enabled: Default'
+- name: "CIS - Ensure 'Configure RPC connection settings: Use authentication for outgoing RPC connections' is set to 'Enabled: Default'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Configure RPC connection settings: Use authentication for outgoing RPC connections' is set to 'Enabled: Default'. Expected state per CIS Intune benchmark: Enabled: Default."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Rpc\\EnableAuthEpResolution Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Rpc\\EnableAuthEpResolution' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:configure-rpc-connection-settings-use-authentication-for-outgoing-rpc-connections-is-enabled-default, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Configure RPC listener settings: Authentication protocol to use for incoming RPC connections:' is set to 'Enabled: Negotiate'
+- name: "CIS - Ensure 'Configure RPC listener settings: Authentication protocol to use for incoming RPC connections:' is set to 'Enabled: Negotiate'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Configure RPC listener settings: Authentication protocol to use for incoming RPC connections:' is set to 'Enabled: Negotiate'. Expected state per CIS Intune benchmark: Enabled: Negotiate."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Rpc\\AuthProtocol Condition: data = '0'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Rpc\\AuthProtocol' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:configure-rpc-listener-settings-authentication-protocol-to-use-for-incoming-rpc-connections-is-enabled-negotiate, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Configure RPC listener settings: Protocols to allow for incoming RPC connections' is set to 'Enabled: RPC over TCP'
+- name: "CIS - Ensure 'Configure RPC listener settings: Protocols to allow for incoming RPC connections' is set to 'Enabled: RPC over TCP'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Configure RPC listener settings: Protocols to allow for incoming RPC connections' is set to 'Enabled: RPC over TCP'. Expected state per CIS Intune benchmark: Enabled: RPC over TCP."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Rpc\\ProtocolOrder Condition: data = 'ncacn_ip_tcp'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Rpc\\ProtocolOrder' AND data = 'ncacn_ip_tcp';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:configure-rpc-listener-settings-protocols-to-allow-for-incoming-rpc-connections-is-enabled-rpc-over-tcp, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Manage processing of Queue-specific files: Manage processing of Queue-Specific files' is set to 'Enabled: Limit Queue-specific files to Color profiles'
+- name: "CIS - Ensure 'Manage processing of Queue-specific files: Manage processing of Queue-Specific files' is set to 'Enabled: Limit Queue-specific files to Color profiles'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Manage processing of Queue-specific files: Manage processing of Queue-Specific files' is set to 'Enabled: Limit Queue-specific files to Color profiles'. Expected state per CIS Intune benchmark: Enabled: Limit Queue-specific files to Color profiles."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Printers\\ManageProcessingOfQueueSpecificFiles Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Printers\\ManageProcessingOfQueueSpecificFiles' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:manage-processing-of-queue-specific-files-manage-processing-of-queue-specific-files-is-enabled-limit-queue-specific-file, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'Point and Print Restrictions: When installing drivers for a new connection' is set to 'Enabled: Show warning and elevation prompt'
+- name: "CIS - Ensure 'Point and Print Restrictions: When installing drivers for a new connection' is set to 'Enabled: Show warning and elevation prompt'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Point and Print Restrictions: When installing drivers for a new connection' is set to 'Enabled: Show warning and elevation prompt'. Expected state per CIS Intune benchmark: Enabled: Show warning and elevation prompt."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: COMPOUND Condition: SELECT 1 WHERE EXISTS (SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Printers\\PointAndPrint\\NoWarningNoElevationOnInstall' AND data = '0') AND EXISTS (SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Printers\\PointAndPrint\\UpdatePromptSettings' AND data = '2');"
   query: SELECT 1 WHERE EXISTS (SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Printers\PointAndPrint\NoWarningNoElevationOnInstall' AND data = '0') AND EXISTS (SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Printers\PointAndPrint\UpdatePromptSettings' AND data = '2');
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:point-and-print-restrictions-when-installing-drivers-for-a-new-connection-is-enabled-show-warning-and-elevation-prompt, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'Point and Print Restrictions: When updating drivers for an existing connection' is set to 'Enabled: Show warning and elevation prompt'
+- name: "CIS - Ensure 'Point and Print Restrictions: When updating drivers for an existing connection' is set to 'Enabled: Show warning and elevation prompt'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Point and Print Restrictions: When updating drivers for an existing connection' is set to 'Enabled: Show warning and elevation prompt'. Expected state per CIS Intune benchmark: Enabled: Show warning and elevation prompt."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: COMPOUND Condition: SELECT 1 WHERE EXISTS (SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Printers\\PointAndPrint\\NoWarningNoElevationOnInstall' AND data = '0') AND EXISTS (SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Printers\\PointAndPrint\\UpdatePromptSettings' AND data = '2');"
