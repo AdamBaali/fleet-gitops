@@ -2596,7 +2596,7 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\MSV1_0\\AuditReceivingNTLMTraffic' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:network, requirement:standard, critical:false, control:network-security-restrict-ntlm-audit-incoming-ntlm-traffic-is-enable-auditing-for-all-accounts, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'User Account Control: Behavior of the elevation prompt for administrators' is set to 'Prompt for consent on the secure desktop'
+- name: "CIS - Ensure 'User Account Control: Behavior of the elevation prompt for administrators' is set to 'Prompt for consent on the secure desktop'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'User Account Control: Behavior of the elevation prompt for administrators' is set to 'Prompt for consent on the secure desktop'. Expected state per CIS Intune benchmark: Prompt for consent on the secure desktop."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\ConsentPromptBehaviorAdmin Condition: data = '2'"
@@ -2610,7 +2610,7 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\ConsentPromptBehaviorUser' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:user-account-control-behavior-of-the-elevation-prompt-for-standard-users-is-automatically-deny-elevation-requests, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'User Account Control: Detect application installations and prompt for elevation' is set to 'Enabled'
+- name: "CIS - Ensure 'User Account Control: Detect application installations and prompt for elevation' is set to 'Enabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'User Account Control: Detect application installations and prompt for elevation' is set to 'Enabled'. Expected state per CIS Intune benchmark: Enabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\EnableInstallerDetection Condition: data = '1'"
@@ -2715,14 +2715,14 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\PassportForWork\\ESSDevicePeripheralsEnabled' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-ess-with-supported-peripherals-is-enhanced-sign-in-security-will-be-enabled, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Defer Feature Updates Period in Days' is set to 'Enabled: 180 or more days'
+- name: "CIS - Ensure 'Defer Feature Updates Period in Days' is set to 'Enabled: 180 or more days'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Defer Feature Updates Period in Days' is set to 'Enabled: 180 or more days'. Expected state per CIS Intune benchmark: Enabled: 180 or more days."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsUpdate\\DeferFeatureUpdatesPeriodInDays Condition: data = '180'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsUpdate\\DeferFeatureUpdatesPeriodInDays' AND data = '180';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:defer-feature-updates-period-in-days-is-enabled-180-or-more-days, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'Require PIN For Pairing' is set to 'Enabled: Pairing ceremony for new devices will always require a PIN'
+- name: "CIS - Ensure 'Require PIN For Pairing' is set to 'Enabled: Pairing ceremony for new devices will always require a PIN'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Require PIN For Pairing' is set to 'Enabled: Pairing ceremony for new devices will always require a PIN'. Expected state per CIS Intune benchmark: Enabled: Pairing ceremony for new devices will always require a PIN."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Bluetooth\\RequirePinForPairing Condition: data = '1'"
