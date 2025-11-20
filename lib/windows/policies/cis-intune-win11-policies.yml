@@ -1763,7 +1763,7 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\SQMClient\\Windows\\CEIPEnable' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:2, platform:windows, category:configuration, requirement:standard, critical:false, control:turn-off-windows-customer-experience-improvement-program-is-enabled, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-  - name: CIS - Ensure 'Support device authentication using certificate' is set to 'Enabled: Automatic'
+- name: CIS - Ensure 'Support device authentication using certificate' is set to 'Enabled: Automatic'
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Support device authentication using certificate' is set to 'Enabled: Automatic'. Expected state per CIS Intune benchmark: Enabled: Automatic."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\\DeviceAuthUsingCert Condition: data = '1'"
