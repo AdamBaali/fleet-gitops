@@ -1602,7 +1602,7 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\WCN\\EnableRegistrars' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:2, platform:windows, category:configuration, requirement:standard, critical:false, control:configuration-of-wireless-settings-using-windows-connect-now-is-disabled, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Minimize the number of simultaneous connections to the Internet or a Windows Domain' is set to 'Enabled: 3 = Prevent Wi-Fi when on Ethernet'
+- name: "CIS - Ensure 'Minimize the number of simultaneous connections to the Internet or a Windows Domain' is set to 'Enabled: 3 = Prevent Wi-Fi when on Ethernet'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Minimize the number of simultaneous connections to the Internet or a Windows Domain' is set to 'Enabled: 3 = Prevent Wi-Fi when on Ethernet'. Expected state per CIS Intune benchmark: Enabled: 3 = Prevent Wi-Fi when on Ethernet."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\WcmSvc\\GroupPolicy\\fMinimizeConnections Condition: data = '3'"
