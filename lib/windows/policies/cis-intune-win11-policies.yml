@@ -1798,7 +1798,7 @@
   query: SELECT 1 FROM services WHERE name = 'plugged in' AND start_type != 'DISABLED';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:session, requirement:standard, critical:false, control:require-a-password-when-a-computer-wakes-plugged-in-is-enabled, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Microsoft Support Diagnostic Tool: Turn on MSDT interactive communication with support provider' is set to 'Disabled'
+- name: "CIS - Ensure 'Microsoft Support Diagnostic Tool: Turn on MSDT interactive communication with support provider' is set to 'Disabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Microsoft Support Diagnostic Tool: Turn on MSDT interactive communication with support provider' is set to 'Disabled'. Expected state per CIS Intune benchmark: Disabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\ScriptedDiagnostics\\EnableQueryRemoteServer Condition: data = '0'"
