@@ -1385,7 +1385,7 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\WindowsInkWorkspace\\AllowSuggestedApps' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:2, platform:windows, category:configuration, requirement:standard, critical:false, control:allow-suggested-apps-in-windows-ink-workspace-is-block, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'Allow Windows Ink Workspace' is set to 'Enabled: but the user can'
+- name: "CIS - Ensure 'Allow Windows Ink Workspace' is set to 'Enabled: but the user can'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Allow Windows Ink Workspace' is set to 'Enabled: but the user can'. Expected state per CIS Intune benchmark: Enabled: but the user can."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\WindowsInkWorkspace\\AllowWindowsInkWorkspace Condition: data = '1'"
@@ -1469,7 +1469,7 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\LocalAccountTokenFilterPolicy' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:security, requirement:standard, critical:false, control:apply-uac-restrictions-to-local-accounts-on-network-logons-is-enabled, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Configure SMB v1 client driver' is set to 'Enabled: Disable driver (recommended)'
+- name: "CIS - Ensure 'Configure SMB v1 client driver' is set to 'Enabled: Disable driver (recommended)'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Configure SMB v1 client driver' is set to 'Enabled: Disable driver (recommended)'. Expected state per CIS Intune benchmark: Enabled: Disable driver (recommended)."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: recommended Condition: start_type != 'DISABLED'"
@@ -1483,91 +1483,91 @@
   query: SELECT 1 FROM services WHERE name = 'SEHOP' AND start_type != 'DISABLED';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-structured-exception-handling-overwrite-protection-sehop-is-enabled, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-  - name: CIS - Ensure 'MSS: (AutoAdminLogon) Enable Automatic Logon (not recommended)' is set to 'Disabled'
+  - name: "CIS - Ensure 'MSS: (AutoAdminLogon) Enable Automatic Logon (not recommended)' is set to 'Disabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'MSS: (AutoAdminLogon) Enable Automatic Logon (not recommended)' is set to 'Disabled'. Expected state per CIS Intune benchmark: Disabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: not recommended Condition: start_type = 'DISABLED'"
   query: SELECT 1 FROM services WHERE name = 'not recommended' AND start_type = 'DISABLED';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:mss-autoadminlogon-enable-automatic-logon-not-recommended-is-disabled, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'MSS: (DisableIPSourceRouting IPv6) IP source routing protection level (protects against packet spoofing)' is set to 'Enabled: Highest protection, source routing is completely disabled'
+- name: "CIS - Ensure 'MSS: (DisableIPSourceRouting IPv6) IP source routing protection level (protects against packet spoofing)' is set to 'Enabled: Highest protection, source routing is completely disabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'MSS: (DisableIPSourceRouting IPv6) IP source routing protection level (protects against packet spoofing)' is set to 'Enabled: Highest protection, source routing is completely disabled'. Expected state per CIS Intune benchmark: Enabled: Highest protection, source routing is completely disabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: protects against packet spoofing Condition: start_type = 'DISABLED'"
   query: SELECT 1 FROM services WHERE name = 'protects against packet spoofing' AND start_type = 'DISABLED';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:mss-disableipsourcerouting-ipv6-ip-source-routing-protection-level-protects-against-packet-spoofing-is-enabled-highest-p, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'MSS: (DisableIPSourceRouting) IP source routing protection level (protects against packet spoofing)' is set to 'Enabled: Highest protection, source routing is completely disabled'
+- name: "CIS - Ensure 'MSS: (DisableIPSourceRouting) IP source routing protection level (protects against packet spoofing)' is set to 'Enabled: Highest protection, source routing is completely disabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'MSS: (DisableIPSourceRouting) IP source routing protection level (protects against packet spoofing)' is set to 'Enabled: Highest protection, source routing is completely disabled'. Expected state per CIS Intune benchmark: Enabled: Highest protection, source routing is completely disabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: protects against packet spoofing Condition: start_type = 'DISABLED'"
   query: SELECT 1 FROM services WHERE name = 'protects against packet spoofing' AND start_type = 'DISABLED';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:mss-disableipsourcerouting-ip-source-routing-protection-level-protects-against-packet-spoofing-is-enabled-highest-protec, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'MSS: (DisableSavePassword) Prevent the dial-up password from being saved (recommended)' is set to 'Enabled'
+- name: "CIS - Ensure 'MSS: (DisableSavePassword) Prevent the dial-up password from being saved (recommended)' is set to 'Enabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'MSS: (DisableSavePassword) Prevent the dial-up password from being saved (recommended)' is set to 'Enabled'. Expected state per CIS Intune benchmark: Enabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: recommended Condition: start_type != 'DISABLED'"
   query: SELECT 1 FROM services WHERE name = 'recommended' AND start_type != 'DISABLED';
   tags: framework:CISv8.1, benchmark:win11, level:2, platform:windows, category:configuration, requirement:standard, critical:false, control:mss-disablesavepassword-prevent-the-dial-up-password-from-being-saved-recommended-is-enabled, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'MSS: (EnableICMPRedirect) Allow ICMP redirects to override OSPF generated routes' is set to 'Disabled'
+- name: "CIS - Ensure 'MSS: (EnableICMPRedirect) Allow ICMP redirects to override OSPF generated routes' is set to 'Disabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'MSS: (EnableICMPRedirect) Allow ICMP redirects to override OSPF generated routes' is set to 'Disabled'. Expected state per CIS Intune benchmark: Disabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: EnableICMPRedirect Condition: start_type = 'DISABLED'"
   query: SELECT 1 FROM services WHERE name = 'EnableICMPRedirect' AND start_type = 'DISABLED';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:mss-enableicmpredirect-allow-icmp-redirects-to-override-ospf-generated-routes-is-disabled, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'MSS: (KeepAliveTime) How often keep-alive packets are sent in milliseconds' is set to 'Enabled: 300,000 or 5 minutes (recommended)'
+- name: "CIS - Ensure 'MSS: (KeepAliveTime) How often keep-alive packets are sent in milliseconds' is set to 'Enabled: 300,000 or 5 minutes (recommended)'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'MSS: (KeepAliveTime) How often keep-alive packets are sent in milliseconds' is set to 'Enabled: 300,000 or 5 minutes (recommended)'. Expected state per CIS Intune benchmark: Enabled: 300,000 or 5 minutes (recommended)."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: recommended Condition: start_type != 'DISABLED'"
   query: SELECT 1 FROM services WHERE name = 'recommended' AND start_type != 'DISABLED';
   tags: framework:CISv8.1, benchmark:win11, level:2, platform:windows, category:configuration, requirement:standard, critical:false, control:mss-keepalivetime-how-often-keep-alive-packets-are-sent-in-milliseconds-is-enabled-300000-or-5-minutes-recommended, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'MSS: (NoNameReleaseOnDemand) Allow the computer to ignore NetBIOS name release requests except from WINS servers' is set to 'Enabled'
+- name: "CIS - Ensure 'MSS: (NoNameReleaseOnDemand) Allow the computer to ignore NetBIOS name release requests except from WINS servers' is set to 'Enabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'MSS: (NoNameReleaseOnDemand) Allow the computer to ignore NetBIOS name release requests except from WINS servers' is set to 'Enabled'. Expected state per CIS Intune benchmark: Enabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: NoNameReleaseOnDemand Condition: start_type != 'DISABLED'"
   query: SELECT 1 FROM services WHERE name = 'NoNameReleaseOnDemand' AND start_type != 'DISABLED';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:mss-nonamereleaseondemand-allow-the-computer-to-ignore-netbios-name-release-requests-except-from-wins-servers-is-enabled, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'MSS: (PerformRouterDiscovery) Allow IRDP to detect and configure Default Gateway addresses (could lead to DoS)' is set to 'Disabled'
+- name: "CIS - Ensure 'MSS: (PerformRouterDiscovery) Allow IRDP to detect and configure Default Gateway addresses (could lead to DoS)' is set to 'Disabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'MSS: (PerformRouterDiscovery) Allow IRDP to detect and configure Default Gateway addresses (could lead to DoS)' is set to 'Disabled'. Expected state per CIS Intune benchmark: Disabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: could lead to DoS Condition: start_type = 'DISABLED'"
   query: SELECT 1 FROM services WHERE name = 'could lead to DoS' AND start_type = 'DISABLED';
   tags: framework:CISv8.1, benchmark:win11, level:2, platform:windows, category:configuration, requirement:standard, critical:false, control:mss-performrouterdiscovery-allow-irdp-to-detect-and-configure-default-gateway-addresses-could-lead-to-dos-is-disabled, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'MSS: (SafeDllSearchMode) Enable Safe DLL search mode (recommended)' is set to 'Enabled'
+- name: "CIS - Ensure 'MSS: (SafeDllSearchMode) Enable Safe DLL search mode (recommended)' is set to 'Enabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'MSS: (SafeDllSearchMode) Enable Safe DLL search mode (recommended)' is set to 'Enabled'. Expected state per CIS Intune benchmark: Enabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: recommended Condition: start_type != 'DISABLED'"
   query: SELECT 1 FROM services WHERE name = 'recommended' AND start_type != 'DISABLED';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:mss-safedllsearchmode-enable-safe-dll-search-mode-recommended-is-enabled, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'MSS: (ScreenSaverGracePeriod) The time in seconds before the screen saver grace period expires (0 recommended)' is set to 'Enabled: 5 or fewer seconds'
+- name: "CIS - Ensure 'MSS: (ScreenSaverGracePeriod) The time in seconds before the screen saver grace period expires (0 recommended)' is set to 'Enabled: 5 or fewer seconds'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'MSS: (ScreenSaverGracePeriod) The time in seconds before the screen saver grace period expires (0 recommended)' is set to 'Enabled: 5 or fewer seconds'. Expected state per CIS Intune benchmark: Enabled: 5 or fewer seconds."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: 0 recommended Condition: start_type != 'DISABLED'"
   query: SELECT 1 FROM services WHERE name = '0 recommended' AND start_type != 'DISABLED';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:mss-screensavergraceperiod-the-time-in-seconds-before-the-screen-saver-grace-period-expires-0-recommended-is-enabled-5-o, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'MSS: (TcpMaxDataRetransmissions IPv6) How many times unacknowledged data is retransmitted' is set to 'Enabled: 3'
+- name: "CIS - Ensure 'MSS: (TcpMaxDataRetransmissions IPv6) How many times unacknowledged data is retransmitted' is set to 'Enabled: 3'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'MSS: (TcpMaxDataRetransmissions IPv6) How many times unacknowledged data is retransmitted' is set to 'Enabled: 3'. Expected state per CIS Intune benchmark: Enabled: 3."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: TcpMaxDataRetransmissions IPv6 Condition: start_type != 'DISABLED'"
   query: SELECT 1 FROM services WHERE name = 'TcpMaxDataRetransmissions IPv6' AND start_type != 'DISABLED';
   tags: framework:CISv8.1, benchmark:win11, level:2, platform:windows, category:session, requirement:standard, critical:false, control:mss-tcpmaxdataretransmissions-ipv6-how-many-times-unacknowledged-data-is-retransmitted-is-enabled-3, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'MSS: (TcpMaxDataRetransmissions) How many times unacknowledged data is retransmitted' is set to 'Enabled: 3'
+- name: "CIS - Ensure 'MSS: (TcpMaxDataRetransmissions) How many times unacknowledged data is retransmitted' is set to 'Enabled: 3'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'MSS: (TcpMaxDataRetransmissions) How many times unacknowledged data is retransmitted' is set to 'Enabled: 3'. Expected state per CIS Intune benchmark: Enabled: 3."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: TcpMaxDataRetransmissions Condition: start_type != 'DISABLED'"
   query: SELECT 1 FROM services WHERE name = 'TcpMaxDataRetransmissions' AND start_type != 'DISABLED';
   tags: framework:CISv8.1, benchmark:win11, level:2, platform:windows, category:security, requirement:standard, critical:false, control:mss-tcpmaxdataretransmissions-how-many-times-unacknowledged-data-is-retransmitted-is-enabled-3, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'MSS: (WarningLevel) Percentage threshold for the security event log at which the system will generate a warning' is set to 'Enabled: 90% or less'
+- name: "CIS - Ensure 'MSS: (WarningLevel) Percentage threshold for the security event log at which the system will generate a warning' is set to 'Enabled: 90% or less'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'MSS: (WarningLevel) Percentage threshold for the security event log at which the system will generate a warning' is set to 'Enabled: 90% or less'. Expected state per CIS Intune benchmark: Enabled: 90% or less."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: WarningLevel Condition: start_type != 'DISABLED'"
