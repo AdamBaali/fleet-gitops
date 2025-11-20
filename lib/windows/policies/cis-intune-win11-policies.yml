@@ -720,7 +720,7 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\RemoteEncryptionProtectionAggressiveness' AND data = '2';
   tags: framework:CISv8.1, benchmark:win11, level:2, platform:windows, category:configuration, requirement:standard, critical:false, control:remote-encryption-protection-aggressiveness-is-medium, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-  - name: CIS - Ensure 'Credential Guard' is set to 'Enabled with UEFI lock'
+- name: CIS - Ensure 'Credential Guard' is set to 'Enabled with UEFI lock'
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Credential Guard' is set to 'Enabled with UEFI lock'. Expected state per CIS Intune benchmark: Enabled with UEFI lock."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\LsaCfgFlags Condition: data = '1'"
