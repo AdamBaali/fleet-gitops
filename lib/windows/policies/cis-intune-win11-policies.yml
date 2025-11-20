@@ -2113,7 +2113,7 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services\\MinEncryptionLevel' AND data = '3';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:set-client-connection-encryption-level-is-enabled-high-level, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-- name: CIS - Ensure 'Set time limit for active but idle Remote Desktop Services sessions' is set to 'Enabled: 15 minutes or less, but not Never (0)'
+- name: "CIS - Ensure 'Set time limit for active but idle Remote Desktop Services sessions' is set to 'Enabled: 15 minutes or less, but not Never (0)'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Set time limit for active but idle Remote Desktop Services sessions' is set to 'Enabled: 15 minutes or less, but not Never (0)'. Expected state per CIS Intune benchmark: Enabled: 15 minutes or less, but not Never (0)."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: 0 Condition: start_type != 'DISABLED'"
