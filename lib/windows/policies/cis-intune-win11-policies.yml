@@ -2365,7 +2365,7 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile\\EnableFirewall' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-domain-network-firewall-enable-log-success-connections-is-enable-logging-of-successful-connections, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: "CIS - Ensure 'Enable Domain Network Firewall: Log File Path' is set to '%SystemRoot%\System32\logfiles\firewall\domainfw.log'"
+- name: "CIS - Ensure 'Enable Domain Network Firewall: Log File Path' is set to '%SystemRoot%\\System32\\logfiles\\firewall\\domainfw.log'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Domain Network Firewall: Log File Path' is set to '%SystemRoot%\\System32\\logfiles\\firewall\\domainfw.log'. Expected state per CIS Intune benchmark: %SystemRoot%\\System32\\logfiles\\firewall\\domainfw.log."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile\\LogFilePath Condition: data LIKE '%%systemroot%\\system32\\logfiles\\firewall\\domainfw.log%'"
