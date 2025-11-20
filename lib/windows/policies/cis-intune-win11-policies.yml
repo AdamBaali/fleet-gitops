@@ -2281,49 +2281,49 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\DeviceGuard\\RequirePlatformSecurityFeatures' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:require-platform-security-features-is-turns-on-vbs-with-secure-boot, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'Device Password Enabled: Alphanumeric Device Password Required' is set to 'Password or Alphanumeric PIN required'
+- name: "CIS - Ensure 'Device Password Enabled: Alphanumeric Device Password Required' is set to 'Password or Alphanumeric PIN required'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Device Password Enabled: Alphanumeric Device Password Required' is set to 'Password or Alphanumeric PIN required'. Expected state per CIS Intune benchmark: Password or Alphanumeric PIN required."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\DeviceLock\\DevicePasswordEnabled Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\DeviceLock\\DevicePasswordEnabled' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:authn, requirement:standard, critical:false, control:device-password-enabled-alphanumeric-device-password-required-is-password-or-alphanumeric-pin-required, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Device Password Enabled: Min Device Password Complex Characters' is set to 'Digits and lowercase letters are required'
+- name: "CIS - Ensure 'Device Password Enabled: Min Device Password Complex Characters' is set to 'Digits and lowercase letters are required'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Device Password Enabled: Min Device Password Complex Characters' is set to 'Digits and lowercase letters are required'. Expected state per CIS Intune benchmark: Digits and lowercase letters are required."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\DeviceLock\\MinDevicePasswordComplexCharacters Condition: data LIKE '%'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\DeviceLock\\MinDevicePasswordComplexCharacters' AND data LIKE '%';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:accounts, requirement:standard, critical:false, control:device-password-enabled-min-device-password-complex-characters-is-digits-and-lowercase-letters-are-required, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Device Password Enabled: Device Password Expiration' is set to '365 or fewer days, but not 0'
+- name: "CIS - Ensure 'Device Password Enabled: Device Password Expiration' is set to '365 or fewer days, but not 0'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Device Password Enabled: Device Password Expiration' is set to '365 or fewer days, but not 0'. Expected state per CIS Intune benchmark: 365 or fewer days, but not 0."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\DeviceLock\\DevicePasswordExpirationDays Condition: data = '365'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\DeviceLock\\DevicePasswordExpirationDays' AND data = '365';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:accounts, requirement:standard, critical:false, control:device-password-enabled-device-password-expiration-is-365-or-fewer-days-but-not-0, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Device Password Enabled: Device Password History' is set to '24 or more password(s)'
+- name: "CIS - Ensure 'Device Password Enabled: Device Password History' is set to '24 or more password(s)'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Device Password Enabled: Device Password History' is set to '24 or more password(s)'. Expected state per CIS Intune benchmark: 24 or more password(s)."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\DeviceLock\\DevicePasswordHistory Condition: data = '24'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\DeviceLock\\DevicePasswordHistory' AND data = '24';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:authn, requirement:standard, critical:false, control:device-password-enabled-device-password-history-is-24-or-more-passwords, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Device Password Enabled: Max Device Password Failed Attempts' is set to '5 or fewer failed attempt(s), but not 0'
+- name: "CIS - Ensure 'Device Password Enabled: Max Device Password Failed Attempts' is set to '5 or fewer failed attempt(s), but not 0'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Device Password Enabled: Max Device Password Failed Attempts' is set to '5 or fewer failed attempt(s), but not 0'. Expected state per CIS Intune benchmark: 5 or fewer failed attempt(s), but not 0."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\DeviceLock\\MaxDevicePasswordFailedAttempts Condition: data = '5'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\DeviceLock\\MaxDevicePasswordFailedAttempts' AND data = '5';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:accounts, requirement:standard, critical:false, control:device-password-enabled-max-device-password-failed-attempts-is-5-or-fewer-failed-attempts-but-not-0, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Device Password Enabled: Max Inactivity Time Device Lock' is set to '15 or fewer minutes, but not 0'
+- name: "CIS - Ensure 'Device Password Enabled: Max Inactivity Time Device Lock' is set to '15 or fewer minutes, but not 0'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Device Password Enabled: Max Inactivity Time Device Lock' is set to '15 or fewer minutes, but not 0'. Expected state per CIS Intune benchmark: 15 or fewer minutes, but not 0."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\DeviceLock\\MaxInactivityTimeDeviceLock Condition: data = '15'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\DeviceLock\\MaxInactivityTimeDeviceLock' AND data = '15';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:session, requirement:standard, critical:false, control:device-password-enabled-max-inactivity-time-device-lock-is-15-or-fewer-minutes-but-not-0, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Device Password Enabled: Min Device Password Length' is set to '14 or more character(s)'
+- name: "CIS - Ensure 'Device Password Enabled: Min Device Password Length' is set to '14 or more character(s)'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Device Password Enabled: Min Device Password Length' is set to '14 or more character(s)'. Expected state per CIS Intune benchmark: 14 or more character(s)."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\DeviceLock\\MinDevicePasswordLength Condition: data = '14'"
