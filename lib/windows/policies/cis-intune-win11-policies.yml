@@ -636,28 +636,28 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\ASR\\Rules\\7674ba52-37eb-4a4f-a9a1-f0f9a1619a2c' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:asr-block-adobe-reader-from-creating-child-processes-is-block, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'ASR: Block execution of potentially obfuscated scripts' is set to 'Audit'
+- name: "CIS - Ensure 'ASR: Block execution of potentially obfuscated scripts' is set to 'Audit'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'ASR: Block execution of potentially obfuscated scripts' is set to 'Audit'. Expected state per CIS Intune benchmark: Audit."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\ASR\\Rules\\5beb7efe-fd9a-4556-801d-275e5ffc04cc Condition: data = '2'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\ASR\\Rules\\5beb7efe-fd9a-4556-801d-275e5ffc04cc' AND data = '2';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:asr-block-execution-of-potentially-obfuscated-scripts-is-audit, cis_safeguard_id:CIS8.2
   purpose: Enforcement
-- name: CIS - Ensure 'ASR: Block persistence through WMI event subscription' is set to 'Block'
+- name: "CIS - Ensure 'ASR: Block persistence through WMI event subscription' is set to 'Block'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'ASR: Block persistence through WMI event subscription' is set to 'Block'. Expected state per CIS Intune benchmark: Block."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\ASR\\Rules\\e6db77e5-3df2-4cf1-b95a-636979351e5b Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\ASR\\Rules\\e6db77e5-3df2-4cf1-b95a-636979351e5b' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:asr-block-persistence-through-wmi-event-subscription-is-block, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'ASR: Block Win32 API calls from Office macros' is set to 'Block'
+- name: "CIS - Ensure 'ASR: Block Win32 API calls from Office macros' is set to 'Block'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'ASR: Block Win32 API calls from Office macros' is set to 'Block'. Expected state per CIS Intune benchmark: Block."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\ASR\\Rules\\92e97fa1-2edf-4476-bdd6-9dd0b4dddc7b Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\ASR\\Rules\\92e97fa1-2edf-4476-bdd6-9dd0b4dddc7b' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:asr-block-win32-api-calls-from-office-macros-is-block, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'ASR: Use advanced protection against ransomware' is set to 'Audit'
+- name: "CIS - Ensure 'ASR: Use advanced protection against ransomware' is set to 'Audit'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'ASR: Use advanced protection against ransomware' is set to 'Audit'. Expected state per CIS Intune benchmark: Audit."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\ASR\\Rules\\c1db55ab-c21a-4637-bb3f-a12568109d35 Condition: data = '2'"
