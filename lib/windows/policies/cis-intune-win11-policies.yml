@@ -222,7 +222,7 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Rpc\\EnableAuthEpResolution' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:remote, requirement:standard, critical:false, control:enable-rpc-endpoint-mapper-client-authentication-is-enabled, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Restrict Unauthenticated RPC clients' is set to 'Enabled: Authenticated'
+- name: "CIS - Ensure 'Restrict Unauthenticated RPC clients' is set to 'Enabled: Authenticated'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Restrict Unauthenticated RPC clients' is set to 'Enabled: Authenticated'. Expected state per CIS Intune benchmark: Enabled: Authenticated."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Rpc\\RestrictRemoteClients Condition: data = '1'"
