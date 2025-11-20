@@ -1672,7 +1672,7 @@
   query: SELECT 1 WHERE EXISTS (SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Printers\PointAndPrint\NoWarningNoElevationOnInstall' AND data = '0') AND EXISTS (SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Printers\PointAndPrint\UpdatePromptSettings' AND data = '2');
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:point-and-print-restrictions-when-updating-drivers-for-an-existing-connection-is-enabled-show-warning-and-elevation-prom, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'Encryption Oracle Remediation' is set to 'Enabled: Force Updated Clients'
+- name: "CIS - Ensure 'Encryption Oracle Remediation' is set to 'Enabled: Force Updated Clients'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Encryption Oracle Remediation' is set to 'Enabled: Force Updated Clients'. Expected state per CIS Intune benchmark: Enabled: Force Updated Clients."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\CredSSP\\Parameters\\AllowEncryptionOracle Condition: data = '0'"
@@ -1693,21 +1693,21 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\DeviceInstall\\Restrictions\\DenyDeviceClasses' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:prevent-installation-of-devices-using-drivers-that-match-these-device-setup-classes-is-enabled, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'Prevent installation of devices using drivers that match these device setup classes: Also apply to matching devices that are already installed.' is set to 'True'
+- name: "CIS - Ensure 'Prevent installation of devices using drivers that match these device setup classes: Also apply to matching devices that are already installed.' is set to 'True'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Prevent installation of devices using drivers that match these device setup classes: Also apply to matching devices that are already installed.' is set to 'True'. Expected state per CIS Intune benchmark: True."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\DeviceInstall\\Restrictions\\DenyDeviceClassesRetroactive Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\DeviceInstall\\Restrictions\\DenyDeviceClassesRetroactive' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:prevent-installation-of-devices-using-drivers-that-match-these-device-setup-classes-also-apply-to-matching-devices-that-, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'Prevent installation of devices using drivers that match these device setup classes: Prevent installation of devices using drivers for these device setup' is set to 'IEEE 1394 device setup classes'
+- name: "CIS - Ensure 'Prevent installation of devices using drivers that match these device setup classes: Prevent installation of devices using drivers for these device setup' is set to 'IEEE 1394 device setup classes'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Prevent installation of devices using drivers that match these device setup classes: Prevent installation of devices using drivers for these device setup' is set to 'IEEE 1394 device setup classes'. Expected state per CIS Intune benchmark: IEEE 1394 device setup classes."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\DeviceInstall\\Restrictions\\DenyDeviceClassesList Condition: data LIKE '%1394%'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\DeviceInstall\\Restrictions\\DenyDeviceClassesList' AND data LIKE '%1394%';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:prevent-installation-of-devices-using-drivers-that-match-these-device-setup-classes-prevent-installation-of-devices-usin, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'Boot-Start Driver Initialization Policy' is set to 'Enabled: Good, unknown and bad but critical'
+- name: "CIS - Ensure 'Boot-Start Driver Initialization Policy' is set to 'Enabled: Good, unknown and bad but critical'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Boot-Start Driver Initialization Policy' is set to 'Enabled: Good, unknown and bad but critical'. Expected state per CIS Intune benchmark: Enabled: Good, unknown and bad but critical."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Configuration Manager\\BootDriverInitPolicy Condition: data = '1'"
