@@ -797,7 +797,7 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\PublicProfile\\EnableFirewall' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-public-network-firewall-is-true, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'Enable Public Network Firewall: Allow Local Policy Merge' is set to 'False'
+- name: "CIS - Ensure 'Enable Public Network Firewall: Allow Local Policy Merge' is set to 'False'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Public Network Firewall: Allow Local Policy Merge' is set to 'False'. Expected state per CIS Intune benchmark: False."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\PublicProfile\\EnableFirewall Condition: data = '0'"
@@ -818,42 +818,42 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\CurrentVersion\\SoftwareProtectionPlatform\\DisableKMSClientOnlineAVSValidation' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:2, platform:windows, category:configuration, requirement:standard, critical:false, control:disallow-kms-client-online-avs-validation-is-allow, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'Accounts: Enable Guest account status' is set to 'Disabled'
+- name: "CIS - Ensure 'Accounts: Enable Guest account status' is set to 'Disabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Accounts: Enable Guest account status' is set to 'Disabled'. Expected state per CIS Intune benchmark: Disabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\EnableGuestAccount Condition: data = '0'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\EnableGuestAccount' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:security, requirement:standard, critical:false, control:accounts-enable-guest-account-status-is-disabled, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Interactive logon: Do not display last signed-in' is set to 'Enabled'
+- name: "CIS - Ensure 'Interactive logon: Do not display last signed-in' is set to 'Enabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Interactive logon: Do not display last signed-in' is set to 'Enabled'. Expected state per CIS Intune benchmark: Enabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\DontDisplayLastUserName Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\DontDisplayLastUserName' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:security, requirement:standard, critical:false, control:interactive-logon-do-not-display-last-signed-in-is-enabled, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Interactive logon: Do not require CTRL+ALT+DEL' is set to 'Disabled'
+- name: "CIS - Ensure 'Interactive logon: Do not require CTRL+ALT+DEL' is set to 'Disabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Interactive logon: Do not require CTRL+ALT+DEL' is set to 'Disabled'. Expected state per CIS Intune benchmark: Disabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\DisableCAD Condition: data = '0'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\DisableCAD' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:security, requirement:standard, critical:false, control:interactive-logon-do-not-require-ctrl-alt-del-is-disabled, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Interactive logon: Smart card removal behavior' is set to 'Lock Workstation'
+- name: "CIS - Ensure 'Interactive logon: Smart card removal behavior' is set to 'Lock Workstation'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Interactive logon: Smart card removal behavior' is set to 'Lock Workstation'. Expected state per CIS Intune benchmark: Lock Workstation."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SCRemoveOption Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SCRemoveOption' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:security, requirement:standard, critical:false, control:interactive-logon-smart-card-removal-behavior-is-lock-workstation, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Network Security: Allow PKU2U authentication requests' is set to 'Block'
+- name: "CIS - Ensure 'Network Security: Allow PKU2U authentication requests' is set to 'Block'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Network Security: Allow PKU2U authentication requests' is set to 'Block'. Expected state per CIS Intune benchmark: Block."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\pku2u\\AllowOnlineID Condition: data = '0'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\pku2u\\AllowOnlineID' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:security, requirement:standard, critical:false, control:network-security-allow-pku2u-authentication-requests-is-block, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'User Account Control: Use Admin Approval Mode' is set to 'Enabled'
+- name: "CIS - Ensure 'User Account Control: Use Admin Approval Mode' is set to 'Enabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'User Account Control: Use Admin Approval Mode' is set to 'Enabled'. Expected state per CIS Intune benchmark: Enabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\EnableLUA Condition: data = '1'"
