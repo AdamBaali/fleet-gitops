@@ -2407,7 +2407,7 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile\\EnableFirewall' AND data = '0';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-private-network-firewall-enable-log-dropped-packets-is-yes-enable-logging-of-dropped-packets, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: "CIS - Ensure 'Enable Private Network Firewall: Log File Path' is set to '%SystemRoot%\System32\logfiles\firewall\privatefw.log'"
+- name: "CIS - Ensure 'Enable Private Network Firewall: Log File Path' is set to '%SystemRoot%\\System32\\logfiles\\firewall\\privatefw.log'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Enable Private Network Firewall: Log File Path' is set to '%SystemRoot%\\System32\\logfiles\\firewall\\privatefw.log'. Expected state per CIS Intune benchmark: %SystemRoot%\\System32\\logfiles\\firewall\\privatefw.log."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile\\LogFilePath Condition: data LIKE '%%systemroot%\\system32\\logfiles\\firewall\\privatefw.log%'"
