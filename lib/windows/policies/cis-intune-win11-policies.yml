@@ -1413,7 +1413,7 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\Update\\AllowAutoUpdate' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:allow-auto-update-is-enabled, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'Defer Quality Updates Period (Days)' is set to 'Enabled: 0 days'
+- name: "CIS - Ensure 'Defer Quality Updates Period (Days)' is set to 'Enabled: 0 days'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Defer Quality Updates Period (Days)' is set to 'Enabled: 0 days'. Expected state per CIS Intune benchmark: Enabled: 0 days."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: Days Condition: start_type != 'DISABLED'"
@@ -1448,14 +1448,14 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\DeviceLock\\BackupDirectory' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:backup-directory-is-backup-the-password-to-azure-ad-only, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Password Age Days' is set to 'Configured: 30 or fewer'
+- name: "CIS - Ensure 'Password Age Days' is set to 'Configured: 30 or fewer'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Password Age Days' is set to 'Configured: 30 or fewer'. Expected state per CIS Intune benchmark: Configured: 30 or fewer."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\DeviceLock\\DevicePasswordExpirationDays Condition: data = '30'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\DeviceLock\\DevicePasswordExpirationDays' AND data = '30';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:password-age-days-is-configured-30-or-fewer, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'Password Length' is set to 'Configured: 15 or more'
+- name: "CIS - Ensure 'Password Length' is set to 'Configured: 15 or more'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Password Length' is set to 'Configured: 15 or more'. Expected state per CIS Intune benchmark: Configured: 15 or more."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\DeviceLock\\MinDevicePasswordLength Condition: data = '15'"
