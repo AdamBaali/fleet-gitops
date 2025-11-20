@@ -2169,77 +2169,77 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Audit\\MPSSVCRuleLevelPolicyChange' AND data = '3';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:policy-change-audit-mpssvc-rule-level-policy-change-is-success-and-failure, cis_safeguard_id:CIS8.2
   purpose: Enforcement
-- name: CIS - Ensure 'Allow Warning For Other Disk Encryption: Allow Standard User Encryption' is set to 'Enabled'
+- name: "CIS - Ensure 'Allow Warning For Other Disk Encryption: Allow Standard User Encryption' is set to 'Enabled'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Allow Warning For Other Disk Encryption: Allow Standard User Encryption' is set to 'Enabled'. Expected state per CIS Intune benchmark: Enabled."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\AllowStandardUserEncryption Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\AllowStandardUserEncryption' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:BL, platform:windows, category:configuration, requirement:standard, critical:false, control:allow-warning-for-other-disk-encryption-allow-standard-user-encryption-is-enabled, cis_safeguard_id:CIS3.4
   purpose: Enforcement
-  - name: CIS - Ensure 'ASR: Block all Office applications from creating child processes' is set to 'Audit'
+  - name: "CIS - Ensure 'ASR: Block all Office applications from creating child processes' is set to 'Audit'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'ASR: Block all Office applications from creating child processes' is set to 'Audit'. Expected state per CIS Intune benchmark: Audit."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\ASR\\Rules\\d4f940ab-401b-4efc-aadc-ad5f3c50688a Condition: data = '2'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\ASR\Rules\d4f940ab-401b-4efc-aadc-ad5f3c50688a' AND data = '2';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:asr-block-all-office-applications-from-creating-child-processes-is-audit, cis_safeguard_id:CIS8.2
   purpose: Enforcement
-- name: CIS - Ensure 'ASR: Block credential stealing from the Windows local security authority subsystem' is set to 'Block'
+- name: "CIS - Ensure 'ASR: Block credential stealing from the Windows local security authority subsystem' is set to 'Block'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'ASR: Block credential stealing from the Windows local security authority subsystem' is set to 'Block'. Expected state per CIS Intune benchmark: Block."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\ASR\\Rules\\9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2 Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\ASR\Rules\9e6c4e1f-7d60-472f-ba1a-a39ef669e4b2' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:asr-block-credential-stealing-from-the-windows-local-security-authority-subsystem-is-block, cis_safeguard_id:CIS6.3
   purpose: Enforcement
-- name: CIS - Ensure 'ASR: Block executable content from email client and webmail' is set to 'Block'
+- name: "CIS - Ensure 'ASR: Block executable content from email client and webmail' is set to 'Block'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'ASR: Block executable content from email client and webmail' is set to 'Block'. Expected state per CIS Intune benchmark: Block."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\ASR\\Rules\\be9ba2d9-53ea-4cdc-84e5-9b1eeee46550 Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\ASR\Rules\be9ba2d9-53ea-4cdc-84e5-9b1eeee46550' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:asr-block-executable-content-from-email-client-and-webmail-is-block, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'ASR: Block executable files from running unless they meet a prevalence, age, or trusted list criterion' is set to 'Audit'
+- name: "CIS - Ensure 'ASR: Block executable files from running unless they meet a prevalence, age, or trusted list criterion' is set to 'Audit'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'ASR: Block executable files from running unless they meet a prevalence, age, or trusted list criterion' is set to 'Audit'. Expected state per CIS Intune benchmark: Audit."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\ASR\\Rules\\01443614-cd74-433a-b99e-2ecdc07bfc25 Condition: data = '2'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\ASR\Rules\01443614-cd74-433a-b99e-2ecdc07bfc25' AND data = '2';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:asr-block-executable-files-from-running-unless-they-meet-a-prevalence-age-or-trusted-list-criterion-is-audit, cis_safeguard_id:CIS8.2
   purpose: Enforcement
-- name: CIS - Ensure 'ASR: Block JavaScript or VBScript from launching downloaded executable content' is set to 'Block'
+- name: "CIS - Ensure 'ASR: Block JavaScript or VBScript from launching downloaded executable content' is set to 'Block'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'ASR: Block JavaScript or VBScript from launching downloaded executable content' is set to 'Block'. Expected state per CIS Intune benchmark: Block."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\ASR\\Rules\\d3e037e1-3eb8-44c8-a917-57927947596d Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\ASR\Rules\d3e037e1-3eb8-44c8-a917-57927947596d' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:asr-block-javascript-or-vbscript-from-launching-downloaded-executable-content-is-block, cis_safeguard_id:CIS4.1
   purpose: Enforcement
-- name: CIS - Ensure 'ASR: Block Office applications from creating executable content' is set to 'Block'
+- name: "CIS - Ensure 'ASR: Block Office applications from creating executable content' is set to 'Block'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'ASR: Block Office applications from creating executable content' is set to 'Block'. Expected state per CIS Intune benchmark: Block."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\ASR\\Rules\\3b576869-a4ec-4529-8536-b80a7769e899 Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\ASR\Rules\3b576869-a4ec-4529-8536-b80a7769e899' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:asr-block-office-applications-from-creating-executable-content-is-block, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'ASR: Block Office applications from injecting code into other processes' is set to 'Block'
+- name: "CIS - Ensure 'ASR: Block Office applications from injecting code into other processes' is set to 'Block'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'ASR: Block Office applications from injecting code into other processes' is set to 'Block'. Expected state per CIS Intune benchmark: Block."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\ASR\\Rules\\75668c1f-73b5-4cf0-bb93-3ecf5cb7cc84 Condition: data = '1'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\ASR\Rules\75668c1f-73b5-4cf0-bb93-3ecf5cb7cc84' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:asr-block-office-applications-from-injecting-code-into-other-processes-is-block, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'ASR: Block Office communication application from creating child processes' is set to 'Audit'
+- name: "CIS - Ensure 'ASR: Block Office communication application from creating child processes' is set to 'Audit'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'ASR: Block Office communication application from creating child processes' is set to 'Audit'. Expected state per CIS Intune benchmark: Audit."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\ASR\\Rules\\26190899-1602-49e8-8b27-eb1d0a1ce869 Condition: data = '2'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\ASR\Rules\26190899-1602-49e8-8b27-eb1d0a1ce869' AND data = '2';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:asr-block-office-communication-application-from-creating-child-processes-is-audit, cis_safeguard_id:CIS8.2
   purpose: Enforcement
-- name: CIS - Ensure 'ASR: Block process creations originating from PSExec and WMI commands' is set to 'Audit'
+- name: "CIS - Ensure 'ASR: Block process creations originating from PSExec and WMI commands' is set to 'Audit'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'ASR: Block process creations originating from PSExec and WMI commands' is set to 'Audit'. Expected state per CIS Intune benchmark: Audit."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\ASR\\Rules\\d1e49aac-8f56-4280-b9ba-993a6d77406c Condition: data = '2'"
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Windows Defender Exploit Guard\ASR\Rules\d1e49aac-8f56-4280-b9ba-993a6d77406c' AND data = '2';
   tags: framework:CISv8.1, benchmark:win11, level:1, platform:windows, category:configuration, requirement:standard, critical:false, control:asr-block-process-creations-originating-from-psexec-and-wmi-commands-is-audit, cis_safeguard_id:CIS8.2
   purpose: Enforcement
-- name: CIS - Ensure 'ASR: Block untrusted and unsigned processes that run from USB' is set to 'Block'
+- name: "CIS - Ensure 'ASR: Block untrusted and unsigned processes that run from USB' is set to 'Block'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'ASR: Block untrusted and unsigned processes that run from USB' is set to 'Block'. Expected state per CIS Intune benchmark: Block."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Windows Defender Exploit Guard\\ASR\\Rules\\b2b3f03d-6a65-4f7b-a9c7-1c7ef74a9ba4 Condition: data = '1'"
@@ -2253,7 +2253,7 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Threats\\ConvertWarnToBlock' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:2, platform:windows, category:configuration, requirement:standard, critical:false, control:enable-convert-warn-to-block-is-warn-verdicts-are-converted-to-block, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-- name: CIS - Ensure 'Remote Encryption Protection Configured State' is set to 'Audit: Generate EDR detections without blocking'
+- name: "CIS - Ensure 'Remote Encryption Protection Configured State' is set to 'Audit: Generate EDR detections without blocking'"
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Remote Encryption Protection Configured State' is set to 'Audit: Generate EDR detections without blocking'. Expected state per CIS Intune benchmark: Audit: Generate EDR detections without blocking."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\FVE\\RemoteEncryptionProtectionConfiguredState Condition: data = '1'"
