@@ -1035,7 +1035,7 @@
   query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\LocationAndSensors\\DisableLocation' AND data = '1';
   tags: framework:CISv8.1, benchmark:win11, level:2, platform:windows, category:configuration, requirement:standard, critical:false, control:allow-location-is-force-location-off, cis_safeguard_id:CIS7.3
   purpose: Enforcement
-  - name: CIS - Ensure 'Allow Telemetry' is set to 'Basic'
+- name: CIS - Ensure 'Allow Telemetry' is set to 'Basic'
   platform: windows
   description: "Policy checks the configuration for: CIS - Ensure 'Allow Telemetry' is set to 'Basic'. Expected state per CIS Intune benchmark: Basic."
   resolution: "Automatic method: Establish the recommended configuration via Group Policy or Intune configuration profile. Query target: HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection\\AllowTelemetry Condition: data = '1'"
