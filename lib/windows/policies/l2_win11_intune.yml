@@ -1,83 +1,71 @@
-- name: CIS - Ensure 'MSS: (DisableSavePassword) Prevent the dialup password from being saved (recommended)' is set to 'Enabled'
+- name: 'CIS - Ensure ''MSS: (DisableSavePassword) Prevent the dialup password from being saved (recommended)'' is set to ''Enabled'''
   platform: windows
-  description: |
-    When you dial a phonebook or VPN entry in Dial-Up Networking, you can use the "Save Password" option so that your Dial-Up Networking password is cached and you will not need to enter it on successive dial attempts. For security, administrators may want to prevent users from caching passwords.
-  resolution: |
+  description: When you dial a phonebook or VPN entry in Dial-Up Networking, you can use the "Save Password" option so that your Dial-Up Networking password is cached and you will not need to enter it on successive dial attempts. For security, administrators may want to prevent users from caching passwords.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Enabled:
     'Computer Configuration\Policies\Administrative Templates\MSS (Legacy)\MSS:(DisableSavePassword) Prevent the dial-up password from being saved'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\RasMan\\Parameters\DisableSavePassword' AND data = 2);
-- name: CIS - Ensure 'MSS: (KeepAliveTime) How often keep-alive packets are sent in milliseconds' is set to 'Enabled: 300,000 or 5 minutes (recommended)'
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\RasMan\\Parameters\DisableSavePassword' AND data = 2);
+- name: 'CIS - Ensure ''MSS: (KeepAliveTime) How often keep-alive packets are sent in milliseconds'' is set to ''Enabled: 300,000 or 5 minutes (recommended)'''
   platform: windows
-  description: |
-    This value controls how often TCP attempts to verify that an idle connection is still intact by sending a keep-alive packet. If the remote computer is still reachable, it acknowledges the keep-alive packet.
-  resolution: |
+  description: This value controls how often TCP attempts to verify that an idle connection is still intact by sending a keep-alive packet. If the remote computer is still reachable, it acknowledges the keep-alive packet.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to 'Enabled: 300,000 or 5 minutes':
     'Computer Configuration\Policies\Administrative Templates\MSS (Legacy)\MSS: (KeepAliveTime) How often keep-alive packets are sent in milliseconds'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\KeepAliveTime' AND data = 300000);
-- name: CIS - Ensure 'MSS: (PerformRouterDiscovery) Allow IRDP to detect and configure Default Gateway addresses (could lead to DoS)' is set to 'Disabled'
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\KeepAliveTime' AND data = 300000);
+- name: 'CIS - Ensure ''MSS: (PerformRouterDiscovery) Allow IRDP to detect and configure Default Gateway addresses (could lead to DoS)'' is set to ''Disabled'''
   platform: windows
-  description: |
-    This setting is used to enable or disable the Internet Router Discovery Protocol (IRDP), which allows the system to detect and configure default gateway addresses automatically as described in RFC 1256 on a per-interface basis.
-  resolution: |
+  description: This setting is used to enable or disable the Internet Router Discovery Protocol (IRDP), which allows the system to detect and configure default gateway addresses automatically as described in RFC 1256 on a per-interface basis.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Disabled:
     'Computer Configuration\Policies\Administrative Templates\MSS (Legacy)\MSS: (PerformRouterDiscovery) Allow IRDP to detect and configure Default Gateway addresses'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\PerformRouterDiscovery' AND data = 0);
-- name: CIS - Ensure 'MSS: (TcpMaxDataRetransmissions IPv6) How many times unacknowledged data is retransmitted' is set to 'Enabled: 3'
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\PerformRouterDiscovery' AND data = 0);
+- name: 'CIS - Ensure ''MSS: (TcpMaxDataRetransmissions IPv6) How many times unacknowledged data is retransmitted'' is set to ''Enabled: 3'''
   platform: windows
-  description: |
-    This setting controls the number of times that TCP retransmits an individual data segment (non-connect segment) before the connection is aborted. The retransmission time-out is doubled with each successive retransmission on a connection. It is reset when responses resume. The base time-out value is dynamically determined by the measured round-trip time on the connection.
-  resolution: |
+  description: This setting controls the number of times that TCP retransmits an individual data segment (non-connect segment) before the connection is aborted. The retransmission time-out is doubled with each successive retransmission on a connection. It is reset when responses resume. The base time-out value is dynamically determined by the measured round-trip time on the connection.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to 'Enabled: 3':
     'Computer Configuration\Policies\Administrative Templates\MSS (Legacy)\MSS:(TcpMaxDataRetransmissions IPv6) How many times unacknowledged data is retransmitted'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\TCPIP6\\Parameters\TcpMaxDataRetransmissions' AND data = 3);
-- name: CIS - Ensure 'MSS: (TcpMaxDataRetransmissions) How many times unacknowledged data is retransmitted' is set to 'Enabled: 3'
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\TCPIP6\\Parameters\TcpMaxDataRetransmissions' AND data = 3);
+- name: 'CIS - Ensure ''MSS: (TcpMaxDataRetransmissions) How many times unacknowledged data is retransmitted'' is set to ''Enabled: 3'''
   platform: windows
-  description: |
-    This setting controls the number of times that TCP retransmits an individual data segment (non-connect segment) before the connection is aborted. The retransmission time-out is doubled with each successive retransmission on a connection. It is reset when responses resume. The base time-out value is dynamically determined by the measured round-trip time on the connection.
-  resolution: |
+  description: This setting controls the number of times that TCP retransmits an individual data segment (non-connect segment) before the connection is aborted. The retransmission time-out is doubled with each successive retransmission on a connection. It is reset when responses resume. The base time-out value is dynamically determined by the measured round-trip time on the connection.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to 'Enabled: 3':
     'Computer Configuration\Policies\Administrative Templates\MSS (Legacy)\MSS:(TcpMaxDataRetransmissions) How many times unacknowledged data is retransmitted'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\TcpMaxDataRetransmissions' AND data = 3);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\TcpMaxDataRetransmissions' AND data = 3);
 - name: CIS - Ensure 'Turn on Mapper I/O (LLTDIO) driver' is set to 'Disabled'
   platform: windows
-  description: |
+  description: |-
     This policy setting changes the operational behavior of the Mapper I/O network protocol driver. LLTDIO allows a computer to discover the topology of a network it's connected to. It also allows a computer to initiate Quality-of-Service requests such as bandwidth estimation and network health analysis.
     The recommended state for this setting is: Disabled.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Disabled:
     'Computer Configuration\Policies\Administrative Templates\Network\Link-Layer Topology Discovery\Turn on Mapper I/O (LLTDIO) driver'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\LLTD\EnableLLTDIO' AND data = 0);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\LLTD\EnableLLTDIO' AND data = 0);
 - name: CIS - Ensure 'Turn on Responder (RSPNDR) driver' is set to 'Disabled'
   platform: windows
-  description: |
+  description: |-
     This policy setting changes the operational behavior of the Responder network protocol driver. The Responder allows a computer to participate in Link Layer Topology Discovery requests so that it can be discovered and located on the network. It also allows a computer to participate in Quality-of-Service activities such as bandwidth estimation and network health analysis.
     The recommended state for this setting is: Disabled.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Disabled (recommended):
     'Computer Configuration\Policies\Administrative Templates\Network\Link-Layer Topology Discovery\Turn on Responder (RSPNDR) driver'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\LLTD\EnableRspndr' AND data = 0);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\LLTD\EnableRspndr' AND data = 0);
 - name: CIS - Ensure 'Configuration of wireless settings using Windows Connect Now' is set to 'Disabled'
   platform: windows
-  description: |
+  description: |-
     This policy setting allows the configuration of wireless settings using Windows Connect
     Now (WCN). The WCN Registrar enables the discovery and configuration of devices
     over Ethernet (UPnP) over in-band 802.11 Wi-Fi through the Windows Portable Device
     API (WPD) and via USB Flash drives. Additional options are available to allow discovery
     and configuration over a specific medium.
     The recommended state for this setting is: Disabled.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via configuration profiles, set the following
     Settings Catalog path to Disabled.
     Administrative Templates\Network\Windows Connect Now\Configuration of
     wireless settings using Windows Connect Now
-  query: |
+  query: |-
     SELECT 1
     FROM registry
     WHERE path IN (
@@ -92,167 +80,141 @@
     HAVING COUNT(DISTINCT path) = 5;
 - name: CIS - Ensure 'Prohibit access of the Windows Connect Now wizards' is set to 'Enabled'
   platform: windows
-  description: |
+  description: |-
     This policy setting prohibits access to Windows Connect Now (WCN) wizards.
     The recommended state for this setting is: Enabled.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via configuration profiles, set the following
     Settings Catalog path to Enabled.
     Administrative Templates\Network\Windows Connect Now\Prohibit access of the
     Windows Connect Now wizards
-  query: |
+  query: |-
     SELECT 1 FROM registry
     WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\WCN\\UI\\DisableWcnUi'
       AND data = 1;
 - name: CIS - Ensure 'Turn off access to the Store' is set to 'Enabled'
   platform: windows
-  description: |
-    This policy setting specifies whether to use the Store service for finding an application to open a file with an unhandled file type or protocol association. When a user opens a file type or protocol that is not associated with any applications on the computer, the user is given the choice to select a local application or use the Store service to find an application.
-  resolution: |
+  description: This policy setting specifies whether to use the Store service for finding an application to open a file with an unhandled file type or protocol association. When a user opens a file type or protocol that is not associated with any applications on the computer, the user is given the choice to select a local application or use the Store service to find an application.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Enabled:
     'Computer Configuration\Policies\Administrative Templates\System\Internet Communication Management\Internet Communication settings\Turn off access to the Store'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Explorer\NoUseStoreOpenWith' AND data = 1);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Explorer\NoUseStoreOpenWith' AND data = 1);
 - name: CIS - Ensure 'Turn off Help Experience Improvement Program (User)' is set to 'Enabled'
   platform: windows
-  description: |
+  description: |-
     This policy setting specifies whether users can participate in the Help Experience Improvement program. The Help Experience Improvement program collects information about how customers use Windows Help so that Microsoft can improve it.
     The recommended state for this setting is: Enabled.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Enabled:
     'User Configuration\Policies\Administrative Templates\System\Internet Communication Management\Internet Communication Settings\Turn off Help Experience Improvement Program'
-  query: |
-    SELECT 1 FROM registry WHERE path LIKE 'HKEY_USERS\%\SOFTWARE\Policies\Microsoft\Assistance\Client\1.0\NoImplicitFeedback' AND data = 1;
+  query: SELECT 1 FROM registry WHERE path LIKE 'HKEY_USERS\%\SOFTWARE\Policies\Microsoft\Assistance\Client\1.0\NoImplicitFeedback' AND data = 1;
 - name: CIS - Ensure 'Turn off Internet Connection Wizard if URL connection is referring to Microsoft.com' is set to 'Enabled'
   platform: windows
-  description: |
-    This policy setting specifies whether the Internet Connection Wizard can connect to Microsoft to download a list of Internet Service Providers (ISPs).
-  resolution: |
+  description: This policy setting specifies whether the Internet Connection Wizard can connect to Microsoft to download a list of Internet Service Providers (ISPs).
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Enabled:
     'Computer Configuration\Policies\Administrative Templates\System\Internet Communication Management\Internet Communication settings\Turn off Internet Connection Wizard if URL connection is referring to Microsoft.com'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Internet Connection Wizard\ExitOnMSICW' AND data = 1);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Internet Connection Wizard\ExitOnMSICW' AND data = 1);
 - name: CIS - Ensure 'Turn off printing over HTTP' is set to 'Enabled'
   platform: windows
-  description: |
-    This policy setting allows you to disable the client computer's ability to print over HTTP, which allows the computer to print to printers on the intranet as well as the Internet.
-  resolution: |
+  description: This policy setting allows you to disable the client computer's ability to print over HTTP, which allows the computer to print to printers on the intranet as well as the Internet.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Enabled:
     'Computer Configuration\Policies\Administrative Templates\System\Internet Communication Management\Internet Communication settings\Turn off printing over HTTP'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Printers\DisableHTTPPrinting' AND data = 1);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Printers\DisableHTTPPrinting' AND data = 1);
 - name: CIS - Ensure 'Turn off Registration if URL connection is referring to Microsoft.com' is set to 'Enabled'
   platform: windows
-  description: |
-    This policy setting specifies whether the Windows Registration Wizard connects to Microsoft.com for online registration.
-  resolution: |
+  description: This policy setting specifies whether the Windows Registration Wizard connects to Microsoft.com for online registration.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Enabled:
     'Computer Configuration\Policies\Administrative Templates\System\Internet Communication Management\Internet Communication settings\Turn off Registration if URL connection is referring to Microsoft.com'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Registration Wizard Control\NoRegistration' AND data = 1);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Registration Wizard Control\NoRegistration' AND data = 1);
 - name: CIS - Ensure 'Turn off Search Companion content file updates' is set to 'Enabled'
   platform: windows
-  description: |
-    This policy setting specifies whether Search Companion should automatically download content updates during local and Internet searches.
-  resolution: |
+  description: This policy setting specifies whether Search Companion should automatically download content updates during local and Internet searches.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Enabled:
     'Computer Configuration\Policies\Administrative Templates\System\Internet Communication Management\Internet Communication settings\Turn off Search Companion content file updates'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\SearchCompanion\DisableContentFileUpdates' AND data = 1);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\SearchCompanion\DisableContentFileUpdates' AND data = 1);
 - name: CIS - Ensure 'Turn off the "Order Prints" picture task' is set to 'Enabled'
   platform: windows
-  description: |
+  description: |-
     This policy setting specifies whether the "Order Prints Online" task is available from Picture Tasks in Windows folders.
     The Order Prints Online Wizard is used to download a list of providers and allow users to order prints online.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Enabled:
     'Computer Configuration\Policies\Administrative Templates\System\Internet Communication Management\Internet Communication settings\Turn off the "Order Prints" picture task'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\NoOnlinePrintsWizard' AND data = 1);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\NoOnlinePrintsWizard' AND data = 1);
 - name: CIS - Ensure 'Turn off the "Publish to Web" task for files and folders' is set to 'Enabled'
   platform: windows
-  description: |
-    This policy setting specifies whether the tasks Publish this file to the Web, Publish this folder to the Web, and Publish the selected items to the Web are available from File and Folder Tasks in Windows folders. The Web Publishing wizard is used to download a list of providers and allow users to publish content to the Web.
-  resolution: |
+  description: This policy setting specifies whether the tasks Publish this file to the Web, Publish this folder to the Web, and Publish the selected items to the Web are available from File and Folder Tasks in Windows folders. The Web Publishing wizard is used to download a list of providers and allow users to publish content to the Web.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Enabled:
     'Computer Configuration\Policies\Administrative Templates\System\Internet Communication Management\Internet Communication settings\Turn off the "Publish to Web" task for files and folders'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\NoPublishingWizard' AND data = 1);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\NoPublishingWizard' AND data = 1);
 - name: CIS - Ensure 'Turn off the Windows Messenger Customer Experience Improvement Program' is set to 'Enabled'
   platform: windows
-  description: |
-    This policy setting specifies whether the Windows Customer Experience Improvement Program can collect anonymous information about how Windows is used. Microsoft uses information collected through the Windows Customer Experience Improvement Program to improve features that are most used and to detect flaws so that they can be corrected more quickly. Enabling this setting will reduce the amount of data Microsoft is able to gather for this purpose.
-  resolution: |
+  description: This policy setting specifies whether the Windows Customer Experience Improvement Program can collect anonymous information about how Windows is used. Microsoft uses information collected through the Windows Customer Experience Improvement Program to improve features that are most used and to detect flaws so that they can be corrected more quickly. Enabling this setting will reduce the amount of data Microsoft is able to gather for this purpose.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Enabled:
     'Computer Configuration\Policies\Administrative Templates\System\Internet Communication Management\Internet Communication settings\Turn off the Windows Messenger Customer Experience Improvement Program'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Messenger\\Client\CEIP' AND data = 2);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Messenger\\Client\CEIP' AND data = 2);
 - name: CIS - Ensure 'Turn off Windows Customer Experience Improvement Program' is set to 'Enabled'
   platform: windows
-  description: |
+  description: |-
     This policy setting specifies whether Windows Messenger can collect anonymous information about how the Windows Messenger software and service is used.
     Microsoft uses information collected through the Windows Customer Experience Improvement Program to detect software flaws so that they can be corrected more quickly, enabling this setting will reduce the amount of data Microsoft is able to gather for this purpose.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Enabled:
     'Computer Configuration\Policies\Administrative Templates\System\Internet Communication Management\Internet Communication settings\Turn off Windows Customer Experience Improvement Program'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\SQMClient\\Windows\CEIPEnable' AND data = 0);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\SQMClient\\Windows\CEIPEnable' AND data = 0);
 - name: CIS - Ensure 'Turn off Windows Error Reporting' is set to 'Enabled'
   platform: windows
-  description: |
-    This policy setting controls whether or not errors are reported to Microsoft. Error Reporting is used to report information about a system or application that has failed or has stopped responding and is used to improve the quality of the product.
-  resolution: |
+  description: This policy setting controls whether or not errors are reported to Microsoft. Error Reporting is used to report information about a system or application that has failed or has stopped responding and is used to improve the quality of the product.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Enabled:
     'Computer Configuration\Policies\Administrative Templates\System\Internet Communication Management\Internet Communication settings\Turn off Windows Error Reporting'
-  query: |
-    SELECT COUNT(*) FROM registry WHERE ((path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Error Reporting\Disabled' AND data = 1) OR (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\PCHealth\\ErrorReporting\DoReport' AND data = 0))=2;
-- name: CIS - Ensure 'Support device authentication using certificate' is set to 'Enabled: Automatic'
+  query: SELECT COUNT(*) FROM registry WHERE ((path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Error Reporting\Disabled' AND data = 1) OR (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\PCHealth\\ErrorReporting\DoReport' AND data = 0))=2;
+- name: 'CIS - Ensure ''Support device authentication using certificate'' is set to ''Enabled: Automatic'''
   platform: windows
-  description: |
+  description: |-
     This policy setting allows you to set support for Kerberos to attempt authentication using the certificate for the device to the domain.
     Support for device authentication using certificate will require connectivity to a DC in the device account domain which supports certificate authentication for computer accounts.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Enabled: Automatic:
     'Computer Configuration\Policies\Administrative Templates\System\Kerberos\Support device authentication using certificate'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\kerberos\\parameters\DevicePKInitBehavior' AND data = 0) AND (SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\kerberos\\parameters\DevicePKInitEnabled' AND data = 1));
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\kerberos\\parameters\DevicePKInitBehavior' AND data = 0) AND (SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\kerberos\\parameters\DevicePKInitEnabled' AND data = 1));
 - name: CIS - Ensure 'Disallow copying of user input methods to the system account for sign-in' is set to 'Enabled'
   platform: windows
-  description: |
-    This policy prevents automatic copying of user input methods to the system account for use on the sign-in screen. The user is restricted to the set of input methods that are enabled in the system account.
-  resolution: |
+  description: This policy prevents automatic copying of user input methods to the system account for use on the sign-in screen. The user is restricted to the set of input methods that are enabled in the system account.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Enabled:
     'Computer Configuration\Policies\Administrative Templates\System\Locale Services\Disallow copying of user input methods to the system account for sign-in'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Control Panel\\International\BlockUserInputMethodsForSignIn' AND data = 1);
-- name: CIS - Ensure 'Microsoft Support Diagnostic Tool: Turn on MSDT interactive communication with support provider' is set to 'Disabled'
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Control Panel\\International\BlockUserInputMethodsForSignIn' AND data = 1);
+- name: 'CIS - Ensure ''Microsoft Support Diagnostic Tool: Turn on MSDT interactive communication with support provider'' is set to ''Disabled'''
   platform: windows
-  description: |
-    This policy setting configures Microsoft Support Diagnostic Tool (MSDT) interactive communication with the support provider. MSDT gathers diagnostic data for analysis by support professionals.
-  resolution: |
+  description: This policy setting configures Microsoft Support Diagnostic Tool (MSDT) interactive communication with the support provider. MSDT gathers diagnostic data for analysis by support professionals.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Disabled:
     'Computer Configuration\Policies\Administrative Templates\System\Troubleshooting and Diagnostics\Microsoft Support Diagnostic Tool\Microsoft Support Diagnostic Tool: Turn on MSDT interactive communication with support provider
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\ScriptedDiagnosticsProvider\\Policy\DisableQueryRemoteServer' AND data = 0);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\ScriptedDiagnosticsProvider\\Policy\DisableQueryRemoteServer' AND data = 0);
 - name: CIS - Ensure 'Block launching Universal Windows apps with Windows Runtime API access from hosted content.' is set to 'Enabled'
   platform: windows
-  description: |
-    This policy setting controls whether Microsoft Store apps with Windows Runtime API access directly from web content can be launched.
-  resolution: |
+  description: This policy setting controls whether Microsoft Store apps with Windows Runtime API access directly from web content can be launched.
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via GP, set the following UI path to 'Enabled':
     'Computer Configuration\Policies\Administrative Templates\Windows Components\App runtime\Block launching Universal Windows apps with Windows Runtime API access from hosted content'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\BlockHostedAppAccessWinRT' AND data != 0);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\BlockHostedAppAccessWinRT' AND data != 0);
 - name: CIS - Ensure 'Join Microsoft MAPS' is set to 'Disabled'
   platform: windows
-  description: |
+  description: |-
     This policy setting allows you to join Microsoft Active Protection Service (MAPS), which Microsoft renamed to Windows Defender Antivirus Cloud Protection Service and then Microsoft Defender Antivirus Cloud Protection Service.
     Microsoft MAPS / Microsoft Defender Antivirus Cloud Protection Service is the online community that helps you choose how to respond to potential threats.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Enabled:
     'Computer Configuration\Policies\Administrative Templates\Windows Components\Microsoft Defender Antivirus\MAPS\Join Microsoft MAPS'
-  query: |
+  query: |-
     -- The registry key is not present when policy is disabled, so query below is returning 1 when policy is disabled and registry value does not exist. It also return 1 in case policy is enabled and its registry value is 1 or 2
     SELECT 1 WHERE (
     NOT EXISTS ( SELECT 1 FROM registry WHERE key = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Spynet' COLLATE NOCASE AND name = 'SpynetReporting' )
@@ -261,192 +223,162 @@
     );
 - name: CIS - Ensure 'Configure Watson events' is set to 'Disabled'
   platform: windows
-  description: |
+  description: |-
     This policy setting allows you to configure whether or not Watson events are sent.
     The recommended state for this setting is: Disabled.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Administrative Templates\Windows Components\Microsoft Defender Antivirus\Reporting\Configure Watson events'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Reporting\\DisableGenericRePorts' AND data = 1);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Reporting\\DisableGenericRePorts' AND data = 1);
 - name: CIS - Ensure 'Turn off Push To Install service' is set to 'Enabled'
   platform: windows
-  description: |
+  description: |-
     This policy setting controls whether users can push Apps to the device from the Microsoft Store App running on other devices or the web.
     The recommended state for this setting is: Enabled.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Enabled:
     'Computer Configuration\Policies\Administrative Templates\Windows Components\Push to Install\Turn off Push To Install service'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\PushToInstall\\DisablePushToInstall' AND data = 1);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\PushToInstall\\DisablePushToInstall' AND data = 1);
 - name: CIS - Ensure 'Allow users to connect remotely by using Remote Desktop Services' is set to 'Disabled'
   platform: windows
-  description: |
-    This policy setting allows you to configure remote access to computers by using Remote Desktop Services.
-  resolution: |
+  description: This policy setting allows you to configure remote access to computers by using Remote Desktop Services.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Administrative Templates\Windows Components\Remote Desktop Services\Remote Desktop Session Host\Connections\Allow users to connect remotely by using Remote Desktop Services'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services\\fDenyTSConnections' AND data = 1);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services\\fDenyTSConnections' AND data = 1);
 - name: CIS - Ensure 'Do not allow COM port redirection' is set to 'Enabled'
   platform: windows
-  description: |
-    This policy setting specifies whether to prevent the redirection of data to client COM ports from the remote computer in a Remote Desktop Services session.
-  resolution: |
+  description: This policy setting specifies whether to prevent the redirection of data to client COM ports from the remote computer in a Remote Desktop Services session.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to 'Enabled':
     'Computer Configuration\Policies\Administrative Templates\Windows Components\Remote Desktop Services\Remote Desktop Session Host\Device and Resource Redirection\Do not allow COM port redirection'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services\\fDisableCcm' AND data = 1);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services\\fDisableCcm' AND data = 1);
 - name: CIS - Ensure 'Do not allow LPT port redirection' is set to 'Enabled'
   platform: windows
-  description: |
-    This policy setting specifies whether to prevent the redirection of data to client LPT ports during a Remote Desktop Services session.
-  resolution: |
+  description: This policy setting specifies whether to prevent the redirection of data to client LPT ports during a Remote Desktop Services session.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to 'Enabled':
     'Computer Configuration\Policies\Administrative Templates\Windows Components\Remote Desktop Services\Remote Desktop Session Host\Device and Resource Redirection\Do not allow LPT port redirection'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services\\fDisableLPT' AND data = 1);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services\\fDisableLPT' AND data = 1);
 - name: CIS - Ensure 'Do not allow supported Plug and Play device redirection' is set to 'Enabled'
   platform: windows
-  description: |
-    This policy setting allows you to control the redirection of supported Plug and Play devices, such as Windows Portable Devices, to the remote computer in a Remote Desktop Services session.
-  resolution: |
+  description: This policy setting allows you to control the redirection of supported Plug and Play devices, such as Windows Portable Devices, to the remote computer in a Remote Desktop Services session.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to 'Enabled':
     'Computer Configuration\Policies\Administrative Templates\Windows Components\Remote Desktop Services\Remote Desktop Session Host\Device and Resource Redirection\Do not allow supported Plug and Play device redirection'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services\\fDisablePNPRedir' AND data = 1);
-- name: CIS - Ensure 'Restrict clipboard transfer from server to client' is set to 'Enabled: Disable clipboard transfers from server to client'
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services\\fDisablePNPRedir' AND data = 1);
+- name: 'CIS - Ensure ''Restrict clipboard transfer from server to client'' is set to ''Enabled: Disable clipboard transfers from server to client'''
   platform: windows
-  description: |
+  description: |-
     This policy setting controls whether the clipboard can be used to transfer data from the Remote Desktop session to the client.
     The recommended state for this setting is: Enabled: Disable clipboard transfers from server to client.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to 'Enabled: Disable clipboard transfers from server to client':
     'Computer Configuration\Administrative Templates\Windows Components\Remote Desktop Services\Remote Desktop Session Host\Device and Resource Redirection\Restrict clipboard transfer from server to client'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services\SCClipLevel' AND data = 0);
-- name: CIS - Ensure 'Set time limit for active but idle Remote Desktop Services sessions' is set to 'Enabled: 15 minutes or less, but not Never (0)'
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services\SCClipLevel' AND data = 0);
+- name: 'CIS - Ensure ''Set time limit for active but idle Remote Desktop Services sessions'' is set to ''Enabled: 15 minutes or less, but not Never (0)'''
   platform: windows
-  description: |
-    This policy setting allows you to specify the maximum amount of time that an active Remote Desktop Services session can be idle (without user input) before it is automatically disconnected.
-  resolution: |
+  description: This policy setting allows you to specify the maximum amount of time that an active Remote Desktop Services session can be idle (without user input) before it is automatically disconnected.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to 'Enabled', then '15 minutes':
     `Computer Configuration\Policies\Administrative Templates\Windows Components\Remote Desktop Services\Remote Desktop Session Host\Session Time Limits\Set time limit for active but idle Remote Desktop Services sessions`
-  query: |
+  query: |-
     SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services\\MaxIdleTime' AND CAST(data AS INTEGER) <= 900000 AND CAST(data AS
     INTEGER) != 0);
-- name: CIS - Ensure 'Set time limit for disconnected sessions' is set to 'Enabled: 1 minute'
+- name: 'CIS - Ensure ''Set time limit for disconnected sessions'' is set to ''Enabled: 1 minute'''
   platform: windows
-  description: |
-    This setting helps to prevent active Remote Desktop sessions from tying up the computer for long periods of time while not in use, preventing computing resources from being consumed by large numbers of disconnected but still active sessions.
-  resolution: |
+  description: This setting helps to prevent active Remote Desktop sessions from tying up the computer for long periods of time while not in use, preventing computing resources from being consumed by large numbers of disconnected but still active sessions.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to 'Enabled' and then '1 minute':
     'Computer Configuration\Policies\Administrative Templates\Windows Components\Remote Desktop Services\Remote Desktop Session Host\Session Time Limits\Set time limit for disconnected sessions'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services\\MaxDisconnectionTime' AND data = 60000);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services\\MaxDisconnectionTime' AND data = 60000);
 - name: CIS - Ensure 'Turn off the Store application' is set to 'Enabled'
   platform: windows
-  description: |
-    This setting denies or allows access to the Store application.
-  resolution: |
+  description: This setting denies or allows access to the Store application.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Enabled:
     'Computer Configuration\Policies\Administrative Templates\Windows Components\Store\Turn off the Store application'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\WindowsStore\RemoveWindowsStore' AND data = 1);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\WindowsStore\RemoveWindowsStore' AND data = 1);
 - name: CIS - Ensure 'Prevent Internet Explorer security prompt for Windows Installer scripts' is set to 'Disabled'
   platform: windows
-  description: |
-    This policy setting controls whether Web-based programs are allowed to install software on the computer without notifying the user.
-  resolution: |
+  description: This policy setting controls whether Web-based programs are allowed to install software on the computer without notifying the user.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Disabled:
     'Computer Configuration\Policies\Administrative Templates\Windows Components\Windows Installer\Prevent Internet Explorer security prompt for Windows Installer scripts'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Installer\SafeForScripting' AND data = 0);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Installer\SafeForScripting' AND data = 0);
 - name: CIS - Ensure 'Prevent Codec Download (User)' is set to 'Enabled'
   platform: windows
-  description: |
-    This setting controls whether Windows Media Player is allowed to download additional codecs for decoding media files it does not already understand.
-  resolution: |
+  description: This setting controls whether Windows Media Player is allowed to download additional codecs for decoding media files it does not already understand.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Enabled:
     'User Configuration\Policies\Administrative Templates\Windows Components\Windows Media Player\Playback\Prevent Codec Download'
-  query: |
-    SELECT 1 FROM registry WHERE (path LIKE 'HKEY_USERS\%\Software\Policies\Microsoft\WindowsMediaPlayer\PreventCodecDownload' AND data = 1);
+  query: SELECT 1 FROM registry WHERE (path LIKE 'HKEY_USERS\%\Software\Policies\Microsoft\WindowsMediaPlayer\PreventCodecDownload' AND data = 1);
 - name: CIS - Ensure 'Turn on PowerShell Script Block Logging' is set to 'Enabled'
   platform: windows
-  description: |
-    This policy setting enables logging of all PowerShell script input to the Applications and Services Logs\Microsoft\Windows\PowerShell\Operational Event Log channel.
-  resolution: |
+  description: This policy setting enables logging of all PowerShell script input to the Applications and Services Logs\Microsoft\Windows\PowerShell\Operational Event Log channel.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to 'Enabled':
     'Computer Configuration\Policies\Administrative Templates\Windows Components\Windows PowerShell\Turn on PowerShell Script Block Logging'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\PowerShell\\ScriptBlockLogging\\EnableScriptBlockLogging' AND data = 1);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\PowerShell\\ScriptBlockLogging\\EnableScriptBlockLogging' AND data = 1);
 - name: CIS - Ensure 'Turn on PowerShell Transcription' is set to 'Enabled'
   platform: windows
-  description: |
-    This Policy setting lets you capture the input and output of Windows PowerShell commands into text-based transcripts.
-  resolution: |
+  description: This Policy setting lets you capture the input and output of Windows PowerShell commands into text-based transcripts.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to 'Enabled':
     'Computer Configuration\Policies\Administrative Templates\Windows Components\Windows PowerShell\Turn on PowerShell Transcription'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\PowerShell\\Transcription\\EnableTranscripting' AND data = 1);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\PowerShell\\Transcription\\EnableTranscripting' AND data = 1);
 - name: CIS - Ensure 'Allow remote server management through WinRM' is set to 'Disabled'
   platform: windows
-  description: |
+  description: |-
     This policy setting allows you to manage whether the Windows Remote Management (WinRM) service
     automatically listens on the network for requests on the HTTP transport over the default HTTP
     port.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Administrative Templates\Windows Components\Windows Remote Management (WinRM)\WinRM Service\Allow remote server management through WinRM'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\WinRM\\Service\\AllowAutoConfig' AND data = 0);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\WinRM\\Service\\AllowAutoConfig' AND data = 0);
 - name: CIS - Ensure 'Allow Remote Shell Access' is set to 'Disabled'
   platform: windows
-  description: |
-    This policy setting allows you to manage configuration of remote access to all supported shells to execute scripts and commands.
-  resolution: |
+  description: This policy setting allows you to manage configuration of remote access to all supported shells to execute scripts and commands.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Administrative Templates\Windows Components\Windows Remote Shell\Allow Remote Shell Access'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\WinRM\\Service\\WinRS\\AllowRemoteShellAccess' AND data = 0);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\WinRM\\Service\\WinRS\\AllowRemoteShellAccess' AND data = 0);
 - name: CIS - Ensure 'Allow Camera' is set to 'Not allowed'
   platform: windows
-  description: |
+  description: |-
     This policy setting controls whether the use of Camera devices on the machine are
     permitted.
     The recommended state for this setting is: Not allowed.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via configuration profiles, set the following
     Settings Catalog path to Not allowed:
     Camera\Allow Camera
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\AppHVSI\\AllowCameraMicrophoneRedirection' AND data = 0);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\AppHVSI\\AllowCameraMicrophoneRedirection' AND data = 0);
 - name: CIS - Ensure 'Enable Convert Warn To Block' is set to 'Warn verdicts are converted to block'
   platform: windows
-  description: |
+  description: |-
     This policy setting controls whether Microsoft Defender Antivirus network protection will
     display a warning, or block network traffic.
     The recommended state for this setting is: Warn verdicts are converted to block.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via configuration profiles, set the following
     Settings Catalog path to Warn verdicts are converted to block.
     Defender\Enable Convert Warn To Block
-  query: |
+  query: |-
     SELECT 1 FROM registry
     WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Policy Manager\\EnableConvertWarnToBlock'
       AND data = '1';
 - name: CIS - Ensure 'Enable File Hash Computation' is set to 'Enable'
   platform: windows
-  description: |
-    This setting determines whether hash values are computed for files scanned by Microsoft Defender.
-  resolution: |
+  description: This setting determines whether hash values are computed for files scanned by Microsoft Defender.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to 'Enabled':
     'Computer Configuration\Policies\Administrative Templates\Windows Components\Microsoft Defender Antivirus\MpEngine\Enable file hash computation feature'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\MpEngine\\EnableFileHashComputation' AND data = 1);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\MpEngine\\EnableFileHashComputation' AND data = 1);
 - name: CIS - Ensure 'Remote Encryption Protection Aggressiveness' is set to 'Medium' or higher
   platform: windows
-  description: |
+  description: |-
     This policy setting configures how aggressively Remote Encryption Prevention
     Protection blocks malicious IP addresses.
     The recommended state for this setting is: Medium: Use cloud aggregation and
@@ -456,19 +388,19 @@
     Note: As of the publication of this Benchmark, the setting configuration state in Intune is
     the sentence above after The recommended state for this setting is: and not Medium or
     higher as the title states. This was done to keep title length to a minimum.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via configuration profiles, set the following
     Settings Catalog path to Medium: Use cloud aggregation and block when
     confidence level is above 99% or High: Use cloud intel and context, and
     block when confidence level is above 90%.
     Defender\Remote Encryption Protection Aggressiveness
-  query: |
+  query: |-
     SELECT 1 FROM registry
     WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Policy Manager\\RemoteEncryptionProtectionAggressiveness'
       AND data IN (1, 2);
 - name: CIS - Ensure 'Allow Windows Spotlight (User)' is set to 'Block'
   platform: windows
-  description: |
+  description: |-
     This policy setting determines whether the all Windows Spotlight features are turned
     on/off (together).
     The recommended state for this setting is: Block.
@@ -477,15 +409,14 @@
     Note #2: Setting this recommendation to Block also disables the Recommendation
     Allow Tailored Experiences With Diagnostic Data which was is included in the onprem Workstation Benchmarks. It was not included in the Intune version since this
     setting is automatically disabled.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via configuration profiles, set the following
     Settings Catalog path to Block:
     Experience\Allow Windows Spotlight (User)
-  query: |
-    SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\CloudContent\\DisableWindowsSpotlightFeatures' AND data = '1';
+  query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\CloudContent\\DisableWindowsSpotlightFeatures' AND data = '1';
 - name: CIS - Ensure 'Disallow KMS Client Online AVS Validation' is set to 'Allow'
   platform: windows
-  description: |
+  description: |-
     The Key Management Service (KMS) is a Microsoft license activation method that
     entails setting up a local server to store the software licenses. The KMS server itself
     needs to connect to Microsoft to activate the KMS service, but subsequent on-network
@@ -493,372 +424,337 @@
     server instead of connecting directly to Microsoft. This policy setting lets you opt-out of
     sending KMS client activation data to Microsoft automatically.
     The recommended state for this setting is: Allow.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via configuration profiles, set the following
     Settings Catalog path to Allow:
     Licensing\Disallow KMS Client Online AVS Validation
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\CurrentVersion\\Software Protection Platform\\NoGenTicket' AND data = 1);
-- name: CIS - Ensure 'Devices: Prevent users from installing printerdrivers when connecting to shared printers' is set to 'Enable'
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\CurrentVersion\\Software Protection Platform\\NoGenTicket' AND data = 1);
+- name: 'CIS - Ensure ''Devices: Prevent users from installing printerdrivers when connecting to shared printers'' is set to ''Enable'''
   platform: windows
-  description: |
+  description: |-
     For a computer to print to a shared printer, the driver for that shared printer must be
     installed on the local computer. This security setting determines who is allowed to install
     a printer driver as part of connecting to a shared printer.
     The recommended state for this setting is: Enable.
     Note: This setting does not affect the ability to add a local printer. This setting does not
     affect Administrators.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via configuration profiles, set the following
     Settings Catalog path to Enable:
     Local Policies Security Options\Devices: Prevent users from installing
     printer drivers when connecting to shared printers
-  query: |
+  query: |-
     SELECT 1 FROM registry
     WHERE path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Print\\Providers\\LanMan Print Services\\Servers\\AddPrinterDrivers'
       AND data = 1;
 - name: CIS - Ensure 'Allow Message Sync' is set to 'message sync is not allowed and cannot be changed by the user.'
   platform: windows
-  description: |
+  description: |-
     This policy setting allows backup and restore of cellular text messages to Microsoft's
     cloud services.
     The recommended state for this setting is: message sync is not allowed and
     cannot be changed by the user..
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via configuration profiles, set the following
     Settings Catalog path to message sync is not allowed and cannot be changed
     by the user.:
     Messaging\Allow Message Sync
-  query: |
-    SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Messaging\\AllowMessageSync' AND data = '0';
+  query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Messaging\\AllowMessageSync' AND data = '0';
 - name: CIS - Ensure 'Allow Shared User App Data' is set to 'Block'
   platform: windows
-  description: |
+  description: |-
     Manages a Windows app's ability to share data between users who have installed the
     app. Data is shared through the SharedLocal folder. This folder is available through the
     Windows.Storage API.
     The recommended state for this setting is: Block.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via configuration profiles, set the following
     Settings Catalog path to Block.
     Microsoft App Store\Allow Shared User App Data
-  query: |
+  query: |-
     SELECT 1 FROM registry
     WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\CurrentVersion\\AppModel\\StateManager\\AllowSharedLocalAppData'
       AND data = '0';
 - name: CIS - Ensure 'Disable Store Originated Apps' is set to 'Enabled'
   platform: windows
-  description: |
+  description: |-
     This setting configures the launch of all apps from the Microsoft Store that came preinstalled or were downloaded.
     The recommended state for this setting is: Enabled.
     Note: This policy setting only applies to Windows 10 Enterprise and Windows 10
     Education editions.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via configuration profiles, set the following
     Settings Catalog path to Enabled:
     Microsoft App Store\Disable Store Originated Apps
-  query: |
-    SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\WindowsStore\\DisableStoreApps' AND data = '1';
+  query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\WindowsStore\\DisableStoreApps' AND data = '1';
 - name: CIS - Ensure 'Disallow Cloud Notification' is set to 'Allow'
   platform: windows
-  description: |
+  description: |-
     This policy setting blocks applications from using the network to send notifications to
     update tiles, tile badges, toast, or raw notifications. This policy setting turns off the
     connection between Windows and the Windows Push Notification Service (WNS). This
     policy setting also stops applications from being able to poll application services to
     update tiles.
     The recommended state for this setting is: Allow.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via configuration profiles, set the following
     Settings Catalog path to Allow.
     Notifications\Disallow Cloud Notification
-  query: |
-    SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\CloudContent\\DisableCloudNotifications' AND data = '0';
+  query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\CloudContent\\DisableCloudNotifications' AND data = '0';
 - name: CIS - Ensure 'Allow Cross Device Clipboard' is set to 'Block'
   platform: windows
-  description: |
+  description: |-
     This setting determines whether Clipboard contents can be synchronized across
     devices.
     The recommended state for this setting is: Block.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via configuration profiles, set the following
     Settings Catalog path to Block:
     Privacy\Allow Cross Device Clipboard
-  query: |
-    SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\\AllowCrossDeviceClipboard' AND data = '0';
+  query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\\AllowCrossDeviceClipboard' AND data = '0';
 - name: CIS - Ensure 'Disable Advertising ID' is set to 'Enabled'
   platform: windows
-  description: |
+  description: |-
     This policy setting turns off the advertising ID, preventing apps from using the ID for
     experiences across apps.
     The recommended state for this setting is: Enabled.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via configuration profiles, set the following
     Settings Catalog path to Enabled:
     Privacy\Disable Advertising ID
-  query: |
-    SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\AdvertisingInfo\\Disabled' AND data = '1';
+  query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\AdvertisingInfo\\Disabled' AND data = '1';
 - name: CIS - Ensure 'Upload User Activities' is set to 'Disabled'
   platform: windows
-  description: |
-    This policy setting determines whether published User Activities can be uploaded to the cloud.
-  resolution: |
+  description: This policy setting determines whether published User Activities can be uploaded to the cloud.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Disabled:
     'Computer Configuration\Policies\Administrative Templates\System\OS Policies\Allow upload of User Activities'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\UploadUserActivities' AND data = 0);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\UploadUserActivities' AND data = 0);
 - name: CIS - Ensure 'Allow Cloud Search' is set to 'Not allowed'
   platform: windows
-  description: |
+  description: |-
     This policy setting allows search and Cortana to search cloud sources like OneDrive
     and SharePoint.
     The recommended state for this setting is: Not allowed.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via configuration profiles, set the following
     Settings Catalog path to Not allowed:
     Search\Allow Cloud Search
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search\\AllowCloudSearch' AND data = 0);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search\\AllowCloudSearch' AND data = 0);
 - name: CIS - Ensure 'Allow search highlights' is set to '0'
   platform: windows
-  description: |
-    This policy setting controls search highlights in the start menu search box and in search home.
-  resolution: |
+  description: This policy setting controls search highlights in the start menu search box and in search home.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to 'Disabled':
     Computer Configuration\Policies\Administrative Templates\Windows Components\Search\Allow search highlights
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search\\EnableDynamicContentInWSB' AND (data = 0));
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search\\EnableDynamicContentInWSB' AND (data = 0));
 - name: CIS - Ensure 'Allow Online Tips' is set to 'Block'
   platform: windows
-  description: |
+  description: |-
     This policy setting configures the retrieval of online tips and help for the Settings app.
     The recommended state for this setting is: Disabled.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Disabled:
     'Computer Configuration\Policies\Administrative Templates\Control Panel\Allow Online Tips'
-  query: |
-    SELECT 1 FROM registry where (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\AllowOnlineTips' AND data == 0);
+  query: SELECT 1 FROM registry where (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\AllowOnlineTips' AND data == 0);
 - name: CIS - Ensure 'Allow Font Providers' is set to 'Not allowed'
   platform: windows
-  description: |
+  description: |-
     This policy setting determines whether Windows is allowed to download fonts and font
     catalog data from an online font provider.
     The recommended state for this setting is: Not allowed.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via configuration profiles, set the following
     Settings Catalog path to Not allowed:
     System\Allow Font Providers
-  query: |
-    SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\\EnableFontProviders' AND data = '0';
+  query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\\EnableFontProviders' AND data = '0';
 - name: CIS - Ensure 'Allow Location' is set to 'Force Location Off...'
   platform: windows
-  description: |
+  description: |-
     This policy setting turns off the location feature for the computer.
     The recommended state for this setting is: Force Location Off Force Location
     Off. All Location Privacy settings are toggled off and grayed out.
     Users can't change the settings, and no apps are allowed access to the
     Location service, including Cortana and Search..
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via configuration profiles, set the following
     Settings Catalog path to Force Location Off....
     System\Allow Location
-  query: |
-    SELECT 1 FROM registry WHERE (path LIKE 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\Providers\\%\\Default\\Device\\System:AllowLocation' AND data = 0);
+  query: SELECT 1 FROM registry WHERE (path LIKE 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PolicyManager\\Providers\\%\\Default\\Device\\System:AllowLocation' AND data = 0);
 - name: CIS - Ensure 'Disable Enterprise Auth Proxy' is set to 'Enable'
   platform: windows
-  description: |
+  description: |-
     This policy setting controls whether the Connected User Experience and Telemetry
     service can automatically use an authenticated proxy to send data back to Microsoft.
     The recommended state for this setting is: Enable.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via configuration profiles, set the following
     Settings Catalog path to Enable.
     System\Disable Enterprise Auth Proxy
-  query: |
-    SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\\DisableEnterpriseAuthProxy' AND data = '1';
+  query: SELECT 1 FROM registry WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\\DisableEnterpriseAuthProxy' AND data = '1';
 - name: CIS - Ensure 'Disable One Drive File Sync' is set to 'Sync Disabled'
   platform: windows
-  description: |
+  description: |-
     This policy setting lets you prevent apps and features from working with files on
     OneDrive using the Next Generation Sync Client.
     The recommended state for this setting is: Sync Disabled.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via configuration profiles, set the following
     Settings Catalog path to Sync Disabled:
     System\Disable One Drive File Sync
-  query: |
+  query: |-
     SELECT 1 FROM registry
     WHERE path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\OneDrive\\DisableFileSyncNGSC'
       AND data = '1';
 - name: CIS - Ensure 'Bluetooth Audio Gateway Service (BTAGService)' is set to 'Disabled'
   platform: windows
-  description: |
+  description: |-
     Service supporting the audio gateway role of the Bluetooth Handsfree Profile.
     The recommended state for this setting is: Disabled.
-  resolution: |
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via domain GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\Bluetooth Audio Gateway Service'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\BTAGService\\Start' AND data == 4);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\BTAGService\\Start' AND data == 4);
 - name: CIS - Ensure 'Bluetooth Support Service (bthserv)' is set to 'Disabled'
   platform: windows
-  description: |
+  description: |-
     The Bluetooth service supports discovery and association of remote Bluetooth devices.
     The recommended state for this setting is: Disabled.
-  resolution: |
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via domain GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\Bluetooth Support Service'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\bthserv\\Start' AND data == 4);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\bthserv\\Start' AND data == 4);
 - name: CIS - Ensure 'Downloaded Maps Manager (MapsBroker)' is set to 'Disabled'
   platform: windows
-  description: |
-    Windows service for application access to downloaded maps. This service is started on- demand by application accessing downloaded maps.
-  resolution: |
+  description: Windows service for application access to downloaded maps. This service is started on- demand by application accessing downloaded maps.
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via domain GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\Downloaded Maps Manager'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\MapsBroker\\Start' AND data == 4);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\MapsBroker\\Start' AND data == 4);
 - name: CIS - Ensure 'GameInput Service (GameInputSvc)' is set to 'Disabled'
   platform: windows
-  description: |
+  description: |-
     This service enables the use of keyboards, mice, gamepads, and other input devices to be used with the GameInput API.
     The recommended state for this setting is: Disabled.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to: Disabled.
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\GameInput Service'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\GameInputSvc\Start' AND data = 0);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\GameInputSvc\Start' AND data = 0);
 - name: CIS - Ensure 'Geolocation Service (lfsvc)' is set to 'Disabled'
   platform: windows
-  description: |
+  description: |-
     This service monitors the current location of the system and manages geofences (a geographical location with associated events).
     The recommended state for this setting is: Disabled.
-  resolution: |
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via domain GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\Geolocation Service'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\lfsvc\\Start' AND data == 4);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\lfsvc\\Start' AND data == 4);
 - name: CIS - Ensure 'Link-Layer Topology Discovery Mapper (lltdsvc)' is set to 'Disabled'
   platform: windows
-  description: |
+  description: |-
     Creates a Network Map, consisting of PC and device topology (connectivity) information, and metadata describing each PC and device.
     The recommended state for this setting is: Disabled.
-  resolution: |
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via domain GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\Link-Layer Topology Discovery Mapper'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\lltdsvc\\Start' AND data == 4);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\lltdsvc\\Start' AND data == 4);
 - name: CIS - Ensure 'Microsoft iSCSI Initiator Service (MSiSCSI)' is set to 'Disabled'
   platform: windows
-  description: |
+  description: |-
     Manages Internet SCSI (iSCSI) sessions from this computer to remote target devices.
     The recommended state for this setting is: Disabled.
-  resolution: |
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via domain GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\Microsoft iSCSI Initiator Service'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\MSiSCSI\\Start' AND data == 4);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\MSiSCSI\\Start' AND data == 4);
 - name: CIS - Ensure 'Print Spooler (Spooler)' is set to 'Disabled'
   platform: windows
-  description: |
+  description: |-
     This service spools print jobs and handles interaction with printers.
     The recommended state for this setting is: Disabled.
-  resolution: |
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via domain GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\Print Spooler'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Spooler\\Start' AND data == 4);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Spooler\\Start' AND data == 4);
 - name: CIS - Ensure 'Problem Reports and Solutions Control Panel Support (wercplsupport)' is set to 'Disabled'
   platform: windows
-  description: |
+  description: |-
     This service provides support for viewing, sending and deletion of system-level problem reports for the Problem Reports and Solutions control panel.
     The recommended state for this setting is: Disabled.
-  resolution: |
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via domain GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\Problem Reports and Solutions Control Panel Support'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\wercplsupport\\Start' AND data == 4);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\wercplsupport\\Start' AND data == 4);
 - name: CIS - Ensure 'Remote Access Auto Connection Manager (RasAuto)' is set to 'Disabled'
   platform: windows
-  description: |
+  description: |-
     Creates a connection to a remote network whenever a program references a remote DNS or NetBIOS name or address.
     The recommended state for this setting is: Disabled.
-  resolution: |
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via domain GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\Remote Access Auto Connection Manager'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\RasAuto\\Start' AND data == 4);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\RasAuto\\Start' AND data == 4);
 - name: CIS - Ensure 'Remote Desktop Configuration (SessionEnv)' is set to 'Disabled'
   platform: windows
-  description: |
+  description: |-
     Remote Desktop Configuration service (RDCS) is responsible for all Remote Desktop related configuration and session maintenance activities that require SYSTEM context. These include per-session temporary folders, RD themes, and RD certificates.
     The recommended state for this setting is: Disabled.
-  resolution: |
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via domain GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\Remote Desktop Configuration'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SessionEnv\\Start' AND data == 4);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SessionEnv\\Start' AND data == 4);
 - name: CIS - Ensure 'Remote Desktop Services (TermService)' is set to 'Disabled'
   platform: windows
-  description: |
+  description: |-
     Allows users to connect interactively to a remote computer. Remote Desktop and Remote Desktop Session Host Server depend on this service.
     The recommended state for this setting is: Disabled.
-  resolution: |
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via domain GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\Remote Desktop Services'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\TermService\\Start' AND data == 4);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\TermService\\Start' AND data == 4);
 - name: CIS - Ensure 'Remote Desktop Services UserMode Port Redirector (UmRdpService)' is set to 'Disabled'
   platform: windows
-  description: |
-    This policy setting determines the redirection of Printers/Drives/Ports for RDP connections.
-  resolution: |
+  description: This policy setting determines the redirection of Printers/Drives/Ports for RDP connections.
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via domain GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\Remote Desktop Services UserMode Port Redirector'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\UmRdpService\\Start' AND data == 4);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\UmRdpService\\Start' AND data == 4);
 - name: CIS - Ensure 'Remote Registry (RemoteRegistry)' is set to 'Disabled'
   platform: windows
-  description: |
-    The service enables remote users to view and modify registry settings on this computer.
-  resolution: |
+  description: The service enables remote users to view and modify registry settings on this computer.
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via domain GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\Remote Registry'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\RemoteRegistry\\Start' AND data == 4);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\RemoteRegistry\\Start' AND data == 4);
 - name: CIS - Ensure 'Server (LanmanServer)' is set to 'Disabled'
   platform: windows
-  description: |
-    The service supports file, print, and named-pipe sharing over the network for this computer.
-  resolution: |
+  description: The service supports file, print, and named-pipe sharing over the network for this computer.
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via domain GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\Server'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\LanmanServer\\Start' AND data == 4);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\LanmanServer\\Start' AND data == 4);
 - name: CIS - Ensure 'SNMP Service (SNMP)' is set to 'Disabled' or 'Not Installed'
   platform: windows
-  description: |
-    The service enables Simple Network Management Protocol (SNMP) requests to be processed by this computer.
-  resolution: |
+  description: The service enables Simple Network Management Protocol (SNMP) requests to be processed by this computer.
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via domain GP, set the following UI path to 'Disabled' or to 'Not Installed':
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\SNMP Service'
-  query: |
+  query: |-
     SELECT CASE
     WHEN NOT EXISTS (SELECT * FROM registry WHERE key = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SNMP\\Start') THEN 1
     WHEN (SELECT data FROM registry WHERE key = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\SNMP\\Start') == '4' THEN 1
@@ -866,91 +762,80 @@
     END AS result;
 - name: CIS - Ensure 'Windows Error Reporting Service (WerSvc)' is set to 'Disabled'
   platform: windows
-  description: |
+  description: |-
     This service allows errors to be reported when programs stop working or responding and allows
     existing solutions to be delivered. Also allows logs to be generated for diagnostic and repair
     services.
-  resolution: |
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via domain GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\Windows Error Reporting Service'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\WerSvc\\Start' AND data == 4);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\WerSvc\\Start' AND data == 4);
 - name: CIS - Ensure 'Windows Event Collector (Wecsvc)' is set to 'Disabled'
   platform: windows
-  description: |
+  description: |-
     This service manages persistent subscriptions to events from remote sources that support
     WS-Management protocol. This includes Windows Vista event logs, hardware and IPMI-enabled event
     sources. The service stores forwarded events in a local Event Log.
-  resolution: |
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via domain GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\Windows Event Collector'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Wecsvc\\Start' AND data == 4);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Wecsvc\\Start' AND data == 4);
 - name: CIS - Ensure 'Windows Push Notifications System Service (WpnService)' is set to 'Disabled'
   platform: windows
-  description: |
-    This service runs in session 0 and hosts the notification platform and connection provider which handles the connection between the device and WNS server.
-  resolution: |
+  description: This service runs in session 0 and hosts the notification platform and connection provider which handles the connection between the device and WNS server.
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via domain GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\Windows Push Notifications System Service'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\WpnService\\Start' AND data == 4);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\WpnService\\Start' AND data == 4);
 - name: CIS - Ensure 'Windows PushToInstall Service (PushToInstall)' is set to 'Disabled'
   platform: windows
-  description: |
-    This service manages Apps that are pushed to the device from the Microsoft Store App running on other devices or the web.
-  resolution: |
+  description: This service manages Apps that are pushed to the device from the Microsoft Store App running on other devices or the web.
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via domain GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\Windows PushToInstall Service (PushToInstall)'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\PushToInstall\\Start' AND data == 4);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\PushToInstall\\Start' AND data == 4);
 - name: CIS - Ensure 'Windows Remote Management (WSManagement) (WinRM)' is set to 'Disabled'
   platform: windows
-  description: |
+  description: |-
     The Windows Remote Management (WinRM) service implements the WS-Management protocol for remote
     management. WS-Management is a standard web services protocol used for remote software and
     hardware management. The WinRM service listens on the network for WS-Management requests and processes them.
-  resolution: |
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via domain GP, set the following UI path to 'Disabled':
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\Windows Remote Management (WS-Management)'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\WinRM\\Start' AND data == 4);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\WinRM\\Start' AND data == 4);
 - name: CIS - Ensure 'WinHTTP Web Proxy Auto-Discovery Service (WinHttpAutoProxySvc)' is set to 'Disabled'
   platform: windows
-  description: |
+  description: |-
     WinHTTP implements the client HTTP stack and provides developers with a Win32 API and COM Automation component for sending HTTP requests and receiving responses.
     In addition, WinHTTP provides support for auto-discovering a proxy configuration via its implementation of the Web Proxy Auto-Discovery (WPAD) protocol.
     The recommended state for this setting is: Disabled.
-  resolution: |
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to: Disabled.
     'Computer Configuration\Policies\Windows Settings\Security Settings\System Services\WinHTTP Web Proxy Auto-Discovery Service'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinHttpAutoProxySvc\Start' AND data = 4);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinHttpAutoProxySvc\Start' AND data = 4);
 - name: CIS - Ensure 'Log On As Batch Job' is set to 'Administrators'
   platform: windows
-  description: |
+  description: |-
     This policy setting allows accounts to log on using the task scheduler service. Because the task
     scheduler is often used for administrative purposes, it may be needed in enterprise
     environments. However, its use should be restricted in high security environments to prevent
     misuse of system resources or to prevent attackers from using the right to launch malicious code
     after gaining user level access to a computer.
-  resolution: |
+  resolution: |-
     Automatic method:
     Ask your system administrator to establish the recommended configuration via GP, ensure that the following UI path is set to an empty list
     'Computer Configuration\Policies\Windows Settings\Security Settings\Local Policies\User Rights Assignment\Log on as a batch job'
-  query: |
-    SELECT 1 FROM cis_audit where item = "2.2.28" AND (regex_match(value,".*(?=.*Administrators).*",0) is not null);
+  query: SELECT 1 FROM cis_audit where item = "2.2.28" AND (regex_match(value,".*(?=.*Administrators).*",0) is not null);
 - name: CIS - Ensure 'Allow suggested apps in Windows Ink Workspace' is set to 'Block'
   platform: windows
-  description: |
-    This policy setting determines whether suggested apps in Windows Ink Workspace are allowed.
-  resolution: |
+  description: This policy setting determines whether suggested apps in Windows Ink Workspace are allowed.
+  resolution: |-
     To establish the recommended configuration via GP, set the following UI path to Disabled:
     'Computer Configuration\Policies\Administrative Templates\Windows Components\Windows Ink Workspace\Allow suggested apps in Windows Ink Workspace'
-  query: |
-    SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\WindowsInkWorkspace\AllowSuggestedAppsInWindowsInkWorkspace' AND data = 0);
+  query: SELECT 1 FROM registry WHERE (path = 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\WindowsInkWorkspace\AllowSuggestedAppsInWindowsInkWorkspace' AND data = 0);
