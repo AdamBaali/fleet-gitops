@@ -3484,7 +3484,12 @@
   platform: windows
   critical: false
   calendar_events_enabled: false
-- query: |-
+- name: CIS - Ensure 'Computer Browser (Browser)' is set to 'Disabled' or 'Not Installed'
+  description: |-
+    Maintains an updated list of computers on the network and supplies this list to computers designated as browsers.
+    The recommended state for this setting is: Disabled or Not Installed.
+  resolution: ""
+  query: |-
     SELECT 1 WHERE
     NOT EXISTS ( SELECT 1 FROM registry WHERE key = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Browser\\Start' )
     OR
