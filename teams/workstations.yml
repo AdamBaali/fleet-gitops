@@ -10,6 +10,7 @@
 name: Workstations
 policies:
   - path: ../lib/windows/policies/l2_win11_intune.yml
+  - path: ../lib/windows/policies/l1_win11_intune.yml
 queries:
   - path: ../lib/all/queries/collect-usb-devices.queries.yml
   - path: ../lib/all/queries/collect-failed-login-attempts.queries.yml
