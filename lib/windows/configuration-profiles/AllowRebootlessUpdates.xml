@@ -1,7 +1,7 @@
 <Add>
   <Item>
     <Target>
-      <LocURI>./Device/Vendor/MSFT/Registry/HKLM/SOFTWARE/Microsoft/PolicyManager/current/device/Update/AllowRebootlessUpdates</LocURI>
+      <LocURI>./Device/Vendor/MSFT/Registry/HKLM/Software/Policies/Microsoft/Windows/WindowsUpdate/AllowRebootlessUpdates</LocURI>
     </Target>
     <Meta>
       <Format xmlns="syncml:metinf">int</Format>
