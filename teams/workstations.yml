@@ -28,6 +28,7 @@ controls:
   windows_settings:
     custom_settings:
       - path: ../lib/windows/configuration-profiles/BlockMDMUnenrollment.xml
+      - path: ../lib/windows/configuration-profiles/AllowRebootlessUpdates.xml
 team_settings:
   secrets:
     - secret: "$FLEET_WORKSTATIONS_ENROLL_SECRET"
